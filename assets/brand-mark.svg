@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72" fill="none" role="img" aria-labelledby="title">
-  <title id="title">Två stiliserade löpare</title>
-  <path d="M7 62c17-4 32-4 47-1 18 4 36 4 59-2" stroke="#0b3028" stroke-width="2.8" stroke-linecap="round"/>
-  <g stroke="#0b3028" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="36" cy="12" r="4.4" fill="#0b3028" stroke="none"/>
-    <path d="M34 20 28 35l10 7 10-15M28 35l-11 10M38 42l-9 16M47 28l10 6"/>
-    <path d="M30 22c5-2 10-1 15 2l-4 11-10-5-1-8Z" fill="#0b3028"/>
-    <circle cx="76" cy="14" r="4.2" fill="#0b3028" stroke="none"/>
-    <path d="M74 22 68 36l10 7 9-14M68 36 58 45M78 43l-8 15M86 30l10 7"/>
-    <path d="M69 25c5-3 11-2 16 1l-4 11-11-4-1-8Z" fill="#0b3028"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 66" fill="none">
+  <g stroke="#0b3028" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="31" cy="10" r="4" fill="#0b3028" stroke="none"/>
+    <path d="M29 17 23 30l10 7 9-13M23 30 14 39M32 37l-8 15M41 25l8 5"/>
+    <circle cx="56" cy="13" r="3.8" fill="#0b3028" stroke="none"/>
+    <path d="M54 20 48 33l10 6 8-12M48 33l-9 9M57 39l-7 14M65 28l7 6"/>
+    <path d="M8 56c16-3 29-2 39 0 12 2 23 2 36-1" stroke-width="2.6"/>
   </g>
 </svg>
