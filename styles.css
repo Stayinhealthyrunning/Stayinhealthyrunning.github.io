@@ -61,7 +61,7 @@ button,input,select,textarea{font:inherit}
 .hero{position:relative;min-height:820px;color:#fff;overflow:hidden;background:var(--pine-950)}
 .hero-media{
   position:absolute;inset:0;
-  background-image:url('design/reference/ultravasan-reference.svg');
+  background-image:url('https://stayinhealthyrunning.github.io/ultravasan-analys/assets/salen-mora-header.png');
   background-size:cover;background-position:center 48%;
   transform:scale(1.018)
 }
