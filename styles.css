@@ -59,15 +59,16 @@ button{font:inherit}
 }
 .hero-media{
   position:absolute;inset:0;
-  background-image:url('https://stayinhealthyrunning.github.io/ultravasan-analys/assets/salen-mora-header.png');
+  background-image:url('assets/hero-approved.jpg');
   background-size:cover;
-  background-position:center 49%;
+  background-position:center center;
   transform:scale(1.002)
 }
 .hero-overlay{
   position:absolute;inset:0;
   background:
-    linear-gradient(180deg,rgba(255,255,255,.02) 0%,rgba(255,255,255,0) 17%,rgba(3,19,16,.07) 29%,rgba(3,19,16,.18) 55%,rgba(3,19,16,.58) 100%)
+    linear-gradient(90deg,rgba(5,24,20,.18) 0%,rgba(5,24,20,.10) 34%,rgba(5,24,20,.01) 62%,rgba(5,24,20,0) 100%),
+    linear-gradient(180deg,rgba(255,255,255,.02) 0%,rgba(255,255,255,0) 17%,rgba(3,19,16,.06) 30%,rgba(3,19,16,.17) 56%,rgba(3,19,16,.56) 100%)
 }
 .hero-inner{
   position:relative;z-index:2;height:100%;
@@ -130,7 +131,7 @@ button{font:inherit}
   background-size:390px 390px;opacity:.19;pointer-events:none
 }
 .race-layout{
-  position:relative;height:318px;
+  position:relative;height:317px;
   display:grid;grid-template-columns:minmax(270px,290px) minmax(0,1fr);
   gap:35px;align-items:center;
   padding-top:21px;padding-bottom:23px;
@@ -181,25 +182,25 @@ button{font:inherit}
   transition:background .18s ease,transform .18s ease
 }
 .race-card.available:hover .race-card-action,.race-card.available:focus-within .race-card-action{background:var(--orange);transform:translateX(2px)}
-.race-card.coming .race-card-media img{filter:saturate(.58) brightness(.78) contrast(.83);transform:scale(1.06)}
-.race-card.coming .race-card-media:after{background:linear-gradient(0deg,rgba(29,48,40,.22),rgba(239,238,230,.15))}
+.race-card.coming .race-card-media img{filter:none;transform:none}
+.race-card.coming .race-card-media:after{background:transparent}
 .race-card.coming .race-card-action{color:#223b33}
 
 .insight-band{
-  position:relative;min-height:246px;color:#fff;background:#0d3129;overflow:hidden
+  position:relative;height:217px;min-height:217px;color:#fff;background:#0d3129;overflow:hidden
 }
 .insight-bg{
   position:absolute;inset:0;
   background:
-    linear-gradient(90deg,rgba(8,34,28,.86),rgba(8,38,31,.9)),
-    url('https://stayinhealthyrunning.github.io/ultravasan-analys/assets/salen-mora-header.png') center 67%/cover no-repeat;
-  filter:saturate(.72)
+    linear-gradient(90deg,rgba(7,34,28,.84),rgba(7,38,31,.90)),
+    url('assets/insight-approved.jpg') center center/cover no-repeat;
+  filter:saturate(.78)
 }
 .insight-layout{
-  position:relative;z-index:1;min-height:246px;
+  position:relative;z-index:1;height:217px;min-height:217px;
   display:grid;grid-template-columns:270px minmax(0,1fr) 290px;
   align-items:center;gap:20px;
-  padding-top:26px;padding-bottom:26px
+  padding-top:20px;padding-bottom:20px
 }
 .insight-quote{margin:0;padding:0 22px 0 0;align-self:center;position:relative}
 .insight-quote>span{
