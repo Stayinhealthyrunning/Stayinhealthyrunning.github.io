@@ -1,38 +1,4 @@
-const races = [
-  {
-    key: 'ultravasan',
-    name: 'Ultravasan',
-    description: 'Djupanalys av UV90 och UV45 med resultat, pacing, replay, banprofil och historik.',
-    url: '/ultravasan-analys/',
-    image: 'assets/ultravasan-card.jpg',
-    imageAlt: 'Löpare på spång genom skogslandskap i varmt kvällsljus',
-    imagePosition: 'center center',
-    status: 'Tillgänglig',
-    available: true
-  },
-  {
-    key: 'gotaleden',
-    name: 'Gotaleden',
-    description: 'Interaktiv analys av Gotaleden Stafett & Ultra med delsträckor, banprofil, kartor och replay.',
-    url: '/gotaleden-splits/',
-    image: 'assets/gotaleden-card.jpg',
-    imageAlt: 'Stig genom grön lövskog med vita vitsippor',
-    imagePosition: 'center center',
-    status: 'Tillgänglig',
-    available: true
-  },
-  {
-    key: 'future',
-    name: 'Fler lopp på väg',
-    description: 'Österlen Spring Trail och fler spännande lopp kommer snart till Loppanalys.',
-    url: null,
-    image: 'assets/future-card.jpg',
-    imageAlt: '',
-    imagePosition: 'center center',
-    status: 'Kommer snart',
-    available: false
-  }
-];
+import { races } from '/races.js';
 
 const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({
   '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'
@@ -54,21 +20,26 @@ function raceCard(race){
       '<span class="race-card-action" aria-hidden="true">→</span>' +
     '</div>';
 
+  const attributes = ' data-race="' + esc(race.key) + '" data-status="' + (race.available ? 'available' : 'coming') + '" data-terrain="' + esc(race.terrain) + '" data-distances="' + esc(race.distances.join(',')) + '" data-years="' + esc(race.years.join(',')) + '"';
+
   if (race.available) {
-    return '<article class="race-card available">' +
+    return '<article class="race-card available"' + attributes + '>' +
       '<a class="race-card-hit" href="' + esc(race.url) + '" aria-label="Öppna analysen för ' + esc(race.name) + '">' +
         inner +
       '</a>' +
     '</article>';
   }
 
-  return '<article class="race-card coming" aria-label="' + esc(race.name) + ' – ' + esc(race.status) + '">' +
+  return '<article class="race-card coming"' + attributes + ' aria-label="' + esc(race.name) + ' – ' + esc(race.status) + '">' +
     inner +
   '</article>';
 }
 
-const grid = document.querySelector('[data-race-grid]');
-if (grid) grid.innerHTML = races.map(raceCard).join('');
+document.querySelectorAll('[data-race-grid]').forEach(grid => {
+  const limit = Number.parseInt(grid.dataset.limit || '', 10);
+  const visibleRaces = Number.isFinite(limit) ? races.slice(0, limit) : races;
+  grid.innerHTML = visibleRaces.map(raceCard).join('');
+});
 
 const toggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
@@ -89,6 +60,7 @@ if (toggle && nav) {
     if (event.key === 'Escape') {
       toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('open');
+      toggle.focus({ preventScroll: true });
     }
   });
 }

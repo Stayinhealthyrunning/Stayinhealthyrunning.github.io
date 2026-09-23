@@ -16,15 +16,15 @@
   <meta name="twitter:title" content="Loppanalys.se">
   <meta name="twitter:description" content="Interaktiva analyser av löplopp – analysera mer, upplev mer.">
   <meta name="twitter:image" content="https://www.loppanalys.se/assets/hero-approved.jpg">
-  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260923-final2">
+  <link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=20260923-catalog1">
 </head>
 <body>
   <a class="skip-link" href="#main">Hoppa till innehållet</a>
 
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="Loppanalys.se – startsida">
-      <img src="assets/brand-mark.svg" alt="" width="84" height="58">
+      <img src="/assets/brand-mark.svg" alt="" width="84" height="58">
       <span class="brand-copy">
         <strong>Loppanalys.se</strong>
         <small>Analysera mer. Upplev mer.</small>
@@ -37,9 +37,8 @@
     </button>
 
     <nav id="site-nav" class="site-nav" aria-label="Huvudnavigering" data-nav>
-      <a class="active" href="#top">Hem</a>
-      <a href="#om">Om</a>
-      <a href="#lopp">Lopp</a>
+      <a class="active" href="#top" aria-current="page">Hem</a>
+      <a href="/lopp/">Lopp</a>
       <a href="#metodik">Metodik</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -56,8 +55,8 @@
           <p class="hero-kicker">Interaktiva analyser av löplopp</p>
           <p class="hero-text">Resultat, pacing, banprofiler, delsträckor, kartor och loppets utveckling – samlat på ett ställe.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#lopp">Utforska loppen <span aria-hidden="true">→</span></a>
-            <a class="button button-ghost" href="#om">Läs mer <span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" href="/lopp/">Utforska loppen <span aria-hidden="true">→</span></a>
+            <a class="button button-ghost" href="#metodik">Läs mer <span aria-hidden="true">↓</span></a>
           </div>
         </div>
 
@@ -89,11 +88,53 @@
           <h2 id="race-title">Välj ett lopp och utforska analysen</h2>
           <p>Detaljerade analyser baserade på verkliga resultat och banor. Upptäck, jämför och inspireras.</p>
         </div>
-        <div class="race-grid" data-race-grid aria-live="polite"></div>
+        <div class="race-grid" data-race-grid data-limit="3" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="insight-band" id="om" aria-label="Om Loppanalys">
+    <section class="method-section" id="metodik" aria-labelledby="method-title">
+      <div class="method-contour" aria-hidden="true"></div>
+      <div class="section-shell method-layout">
+        <div class="method-intro">
+          <p class="eyebrow">Metodik</p>
+          <h2 id="method-title">Så fungerar analyserna</h2>
+          <p class="method-lead">Från resultatlista till förståelse av loppet</p>
+          <p>Loppanalys.se gör offentliga resultat och baninformation mer användbara. Resultat, passeringar och tillgänglig information om banan bearbetas till interaktiva analyser av tempo, delsträckor, placeringar och hur loppet utvecklas från start till mål.</p>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <p class="method-label">Data</p>
+            <h3>Utgångspunkten är publicerade resultat</h3>
+            <p>Data hämtas i första hand från arrangörernas offentliga resultat och publicerad information om loppets bana. När passeringstider, GPX-data, höjdprofiler eller resultat från tidigare år finns tillgängliga kan även dessa användas i analysen.</p>
+            <p>Vilken information som går att analysera varierar därför mellan olika lopp och upplagor.</p>
+          </article>
+
+          <article class="method-card">
+            <p class="method-label">Bearbetning</p>
+            <h3>Rådata görs jämförbar</h3>
+            <p>Resultat och passeringar struktureras och kontrolleras innan de används. Tider, placeringar, klasser och delsträckor kopplas samman så att verktyget kan beräkna exempelvis tempo, segmenttider och hur en löpares position och prestation förändras under loppet.</p>
+            <p>Samma beräkningsprinciper används för deltagarna inom samma lopp.</p>
+          </article>
+
+          <article class="method-card">
+            <p class="method-label">Analys och jämförelser</p>
+            <h3>Fokus ligger på loppets utveckling</h3>
+            <p>En sluttid berättar bara en del av historien. Analysen gör det möjligt att se var tid vinns eller förloras, hur tempot förändras längs banan och hur loppet utvecklas mellan olika passeringar.</p>
+            <p>Där underlaget tillåter går det också att jämföra löpare, klasser, delsträckor och olika upplagor av samma lopp.</p>
+          </article>
+
+          <article class="method-card">
+            <p class="method-label">Begränsningar och transparens</p>
+            <h3>Analysen är aldrig bättre än källdatan</h3>
+            <p>Saknade eller felaktiga passeringar, förändrade bansträckningar och skillnader mellan olika års resultat kan påverka jämförbarheten. Där uppskattningar eller särskilda antaganden behövs ska det framgå tydligt.</p>
+            <p>Loppanalys.se förändrar inte de officiella resultaten. Arrangörens publicerade resultat är alltid grundkällan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="insight-band" aria-label="Analysområden">
       <div class="insight-bg" aria-hidden="true"></div>
       <div class="section-shell insight-layout">
         <blockquote class="insight-quote">
@@ -105,28 +146,28 @@
         <div class="insight-features">
           <article>
             <svg viewBox="0 0 46 46" aria-hidden="true"><path d="M6 39V28h7v11H6Zm13 0V18h7v21h-7Zm14 0V8h7v31h-7Z"/></svg>
-            <strong>Resultat & statistik</strong>
+            <strong>Resultat &amp; statistik</strong>
             <p>Djupare förståelse<br>för din prestation</p>
           </article>
           <article>
             <svg viewBox="0 0 46 46" aria-hidden="true"><path d="m5 11 11-5 14 6 11-5v29l-11 5-14-6-11 5V11Zm11-5v29m14-23v29"/></svg>
-            <strong>Kartor & banprofiler</strong>
+            <strong>Kartor &amp; banprofiler</strong>
             <p>Utforska banan<br>i detalj</p>
           </article>
-          <article id="metodik">
+          <article>
             <svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="17"/><circle cx="23" cy="23" r="9"/><path d="M23 23 36 10"/><path d="m33 10 4-1-1 4"/></svg>
-            <strong>Pacing & delsträckor</strong>
+            <strong>Pacing &amp; delsträckor</strong>
             <p>Se loppets utveckling<br>och jämför tider</p>
           </article>
           <article>
             <svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="18" cy="17" r="6"/><circle cx="31" cy="19" r="5"/><path d="M6 38c1-9 6-13 13-13s12 4 13 13M27 27c7-1 12 3 13 11"/></svg>
-            <strong>Jämför & inspireras</strong>
+            <strong>Jämför &amp; inspireras</strong>
             <p>Historik, klasser<br>och gemenskap</p>
           </article>
         </div>
 
-        <div class="insight-brand" id="kontakt">
-          <img src="assets/brand-mark-light.svg" alt="" width="92" height="56">
+        <div class="insight-brand">
+          <img src="/assets/brand-mark-light.svg" alt="" width="92" height="56">
           <strong>Loppanalys.se</strong>
           <small>Analysera mer. Upplev mer.</small>
           <div class="brand-rule"></div>
@@ -134,9 +175,47 @@
         </div>
       </div>
     </section>
+
+    <section class="contact-section" id="kontakt" aria-labelledby="contact-title">
+      <div class="contact-contour" aria-hidden="true"></div>
+      <div class="section-shell contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow">Kontakt</p>
+          <h2 id="contact-title">Bakom Loppanalys.se</h2>
+          <p>Jag heter Stefan Bengtsson och är upphovsman till Loppanalys.se.</p>
+          <p>Projektet har vuxit fram ur mitt intresse för löpning och för att förstå vad som faktiskt händer under ett lopp – inte bara vilken sluttid som står i resultatlistan. Målet är att göra resultat, banor och loppförlopp mer begripliga, jämförbara och användbara för löpare.</p>
+          <p>Har du hittat ett fel, har förslag på ett lopp som borde analyseras eller en idé om hur verktygen kan utvecklas är du välkommen att höra av dig.</p>
+        </div>
+
+        <div class="contact-options" aria-label="Kontaktvägar">
+          <a class="contact-card" href="mailto:stefan.stebe3@gmail.com">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="26" height="20" rx="3"/><path d="m5 9 11 9L27 9"/></svg>
+            <span><strong>E-post</strong><small>stefan.stebe3@gmail.com</small></span>
+            <span class="contact-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="contact-card" href="https://www.instagram.com/stayinhealthyrunning/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="7"/><circle cx="16" cy="16" r="5.5"/><circle class="icon-dot" cx="23.5" cy="8.5" r="1.2"/></svg>
+            <span><strong>Instagram</strong><small>@stayinhealthyrunning</small></span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-card" href="https://www.youtube.com/watch?v=Wg5fxCEyAdU&amp;list=PLuI3oCc13p7emHXZeI3Dum0tSQpSmesyL&amp;pp=0gcJCf8COCosWNinsAgC" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="5"/><path class="icon-fill" d="m13 12 8 4-8 4v-8Z"/></svg>
+            <span><strong>YouTube</strong><small>The Joy of Trailrunning – Races &amp; Ultra Adventures</small></span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js?v=20260923-final2" defer></script>
-  <!-- deployment-marker: approved-frontpage-2026-09-23-final2 -->
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <span>© 2026 Loppanalys.se</span>
+      <span>Analysera mer. Upplev mer.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/script.js?v=20260923-catalog1"></script>
+  <!-- deployment-marker: race-catalog-methodology-contact-2026-09-23 -->
 </body>
 </html>

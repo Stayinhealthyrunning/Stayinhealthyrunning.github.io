@@ -320,3 +320,181 @@ button{font:inherit}
   html{scroll-behavior:auto}
   *,*:before,*:after{transition:none!important;animation:none!important}
 }
+
+/* Shared focus, methodology, contact and race catalogue */
+:where(a,button):focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+#metodik,#kontakt{scroll-margin-top:24px}
+
+.method-section{
+  position:relative;overflow:hidden;background:#f5f3ed;
+  border-bottom:1px solid var(--line)
+}
+.method-contour{
+  position:absolute;inset:0 0 0 67%;background:url('/assets/topography.svg') center/430px 430px;
+  opacity:.13;pointer-events:none
+}
+.method-layout{
+  position:relative;display:grid;grid-template-columns:minmax(250px,320px) minmax(0,1fr);
+  gap:clamp(42px,5vw,78px);padding-top:76px;padding-bottom:82px
+}
+.method-intro{align-self:start;position:sticky;top:32px}
+.method-intro .eyebrow,.contact-copy .eyebrow,.catalog-heading .eyebrow{color:#c85b21}
+.method-intro h2,.contact-copy h2,.catalog-heading h2{
+  margin:0;letter-spacing:-.045em;line-height:1.04;font-size:clamp(2.25rem,3.2vw,3.35rem)
+}
+.method-lead{margin:20px 0 14px;font-size:1.14rem;font-weight:760;color:var(--pine-800)}
+.method-intro>p:last-child{margin:0;color:#455651;line-height:1.65;font-size:.97rem}
+.method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.method-card{
+  position:relative;min-width:0;padding:27px 27px 25px;background:rgba(255,255,255,.88);
+  border:1px solid rgba(18,45,39,.09);border-radius:16px;box-shadow:0 12px 34px rgba(13,49,41,.075)
+}
+.method-card:before{
+  content:"";position:absolute;left:27px;top:0;width:42px;height:3px;background:var(--orange);border-radius:0 0 4px 4px
+}
+.method-label{
+  margin:0 0 12px;text-transform:uppercase;letter-spacing:.2em;font-size:.62rem;
+  font-weight:850;color:#a7481c
+}
+.method-card h3{margin:0 0 13px;font-size:1.18rem;line-height:1.2;letter-spacing:-.025em}
+.method-card p:not(.method-label){margin:0;color:#52615d;font-size:.84rem;line-height:1.58}
+.method-card p+p{margin-top:10px!important}
+
+.contact-section{position:relative;overflow:hidden;background:var(--paper)}
+.contact-contour{
+  position:absolute;inset:0 64% 0 0;background:url('/assets/topography.svg') center/410px 410px;
+  opacity:.16;pointer-events:none
+}
+.contact-layout{
+  position:relative;display:grid;grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr);
+  gap:clamp(48px,7vw,104px);align-items:center;padding-top:74px;padding-bottom:78px
+}
+.contact-copy h2{margin-bottom:24px}
+.contact-copy>p:not(.eyebrow){max-width:660px;margin:0;color:#465752;font-size:.96rem;line-height:1.64}
+.contact-copy>p+p{margin-top:13px!important}
+.contact-options{display:grid;gap:12px}
+.contact-card{
+  display:grid;grid-template-columns:46px minmax(0,1fr) auto;align-items:center;gap:16px;
+  min-width:0;padding:17px 19px;text-decoration:none;background:#fff;border:1px solid rgba(18,45,39,.1);
+  border-radius:15px;box-shadow:0 8px 24px rgba(13,49,41,.075);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
+}
+.contact-card:hover,.contact-card:focus-visible{
+  transform:translateY(-2px);border-color:rgba(245,130,58,.7);box-shadow:0 13px 28px rgba(13,49,41,.12)
+}
+.contact-card svg{
+  width:42px;height:42px;padding:8px;border-radius:12px;background:#edf1ed;
+  fill:none;stroke:var(--pine-800);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round
+}
+.contact-card .icon-dot,.contact-card .icon-fill{fill:var(--pine-800);stroke:none}
+.contact-card>span:nth-child(2){display:grid;min-width:0;gap:3px}
+.contact-card strong{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}
+.contact-card small{min-width:0;color:#5a6864;font-size:.82rem;line-height:1.35;overflow-wrap:anywhere}
+.contact-arrow{font-size:1.25rem;font-weight:750;color:var(--pine-800)}
+
+.site-footer{background:var(--pine-950);color:rgba(255,255,255,.76)}
+.footer-inner{
+  min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px;
+  font-size:.72rem;letter-spacing:.08em
+}
+.footer-inner span:last-child{text-transform:uppercase;letter-spacing:.2em;font-size:.62rem}
+
+.catalog-page{background:#f5f3ed}
+.catalog-page .site-header{color:#fff}
+.catalog-page .brand-copy small{color:rgba(255,255,255,.82)}
+.catalog-page .site-nav a:after{background:var(--orange)}
+.catalog-page .menu-toggle{border-color:rgba(255,255,255,.46);background:rgba(6,31,25,.32)}
+.catalog-page .menu-toggle span:not(.sr-only){background:#fff}
+.catalog-hero{
+  position:relative;height:385px;min-height:385px;color:#fff;overflow:hidden;background:var(--pine-900)
+}
+.catalog-hero-media{
+  position:absolute;inset:0;background:url('/assets/hero-approved.jpg') center 57%/cover no-repeat;
+  transform:scale(1.002)
+}
+.catalog-hero-overlay{
+  position:absolute;inset:0;background:
+    linear-gradient(90deg,rgba(5,30,24,.86) 0%,rgba(7,38,31,.62) 45%,rgba(7,38,31,.18) 76%,rgba(7,38,31,.28) 100%),
+    linear-gradient(180deg,rgba(5,28,23,.35),rgba(5,28,23,.58))
+}
+.catalog-hero-inner{
+  position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-top:124px;padding-bottom:54px
+}
+.catalog-hero .eyebrow{color:#ffd0b0;margin-bottom:13px}
+.catalog-hero h1{
+  margin:0 0 13px;font-size:clamp(3.35rem,5.5vw,5rem);line-height:.92;letter-spacing:-.055em
+}
+.catalog-hero .catalog-lead{margin:0 0 8px;max-width:710px;font-size:clamp(1.1rem,1.6vw,1.45rem);line-height:1.35}
+.catalog-hero .catalog-note{margin:0;max-width:650px;color:rgba(255,255,255,.82);font-size:.94rem}
+.catalog-section{position:relative;overflow:hidden;background:#f5f3ed}
+.catalog-section:before{
+  content:"";position:absolute;inset:0 72% 0 0;background:url('/assets/topography.svg') center/430px 430px;
+  opacity:.15
+}
+.catalog-shell{position:relative;max-width:1320px;padding-top:64px;padding-bottom:72px}
+.catalog-heading{display:grid;grid-template-columns:minmax(250px,.7fr) minmax(320px,1fr);gap:50px;align-items:end;margin-bottom:34px}
+.catalog-heading .eyebrow{grid-column:1/-1;margin-bottom:-30px}
+.catalog-heading h2{font-size:clamp(2.1rem,3vw,3rem)}
+.catalog-heading>p:last-child{margin:0;color:#52615d;line-height:1.6;max-width:570px}
+.catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.catalog-grid .race-card{height:310px}
+.catalog-grid .race-card-media{height:190px}
+.catalog-grid .race-card-body{min-height:120px;padding:14px 18px 15px}
+.catalog-grid .race-card-body h3{font-size:1.22rem}
+.catalog-grid .race-card-body p{font-size:.82rem}
+.catalog-grid .race-card.coming{opacity:.82}
+.catalog-endnote{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:34px;
+  padding:22px 25px;border:1px solid rgba(18,45,39,.1);border-radius:15px;background:rgba(255,255,255,.72)
+}
+.catalog-endnote p{margin:0;color:#455651}
+.catalog-endnote a{font-weight:800;color:var(--pine-800);text-underline-offset:4px}
+
+@media (max-width:1050px){
+  .method-layout{grid-template-columns:1fr;gap:35px}
+  .method-intro{position:static;max-width:760px}
+  .contact-layout{grid-template-columns:1fr;gap:38px}
+  .contact-copy{max-width:800px}
+  .contact-options{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .contact-card{grid-template-columns:40px minmax(0,1fr);align-content:start}
+  .contact-card svg{width:38px;height:38px}
+  .contact-arrow{display:none}
+  .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  #metodik,#kontakt{scroll-margin-top:0}
+  .method-layout,.contact-layout{padding-top:54px;padding-bottom:58px}
+  .method-grid{grid-template-columns:1fr}
+  .method-card{padding:25px 22px 23px}
+  .method-card:before{left:22px}
+  .contact-options{grid-template-columns:1fr}
+  .contact-card{grid-template-columns:42px minmax(0,1fr) auto}
+  .contact-arrow{display:block}
+  .footer-inner{min-height:82px;flex-direction:column;justify-content:center;text-align:center;gap:6px}
+  .catalog-page .site-nav{color:var(--pine-950)}
+  .catalog-page .site-nav a:after{display:none}
+  .catalog-hero{height:430px;min-height:430px}
+  .catalog-hero-media{background-position:64% center}
+  .catalog-hero-overlay{background:linear-gradient(90deg,rgba(4,28,22,.86),rgba(5,31,25,.46)),linear-gradient(180deg,rgba(5,28,23,.22),rgba(5,28,23,.7))}
+  .catalog-hero-inner{padding-top:115px;padding-bottom:48px}
+  .catalog-hero h1{font-size:3.45rem}
+  .catalog-section:before{inset:0 35% 0 0}
+  .catalog-shell{padding-top:49px;padding-bottom:58px}
+  .catalog-heading{display:block;margin-bottom:26px}
+  .catalog-heading .eyebrow{margin-bottom:15px}
+  .catalog-heading h2{margin-bottom:15px}
+  .catalog-grid{grid-template-columns:1fr}
+  .catalog-grid .race-card{height:auto}
+  .catalog-grid .race-card-media{height:auto;aspect-ratio:2/1}
+  .catalog-grid .race-card-body{min-height:108px}
+  .catalog-endnote{align-items:flex-start;flex-direction:column}
+}
+@media (max-width:430px){
+  .method-intro h2,.contact-copy h2{font-size:2.25rem}
+  .method-card h3{font-size:1.08rem}
+  .contact-card{padding:15px 14px;gap:12px}
+  .contact-card small{font-size:.77rem}
+  .catalog-hero h1{font-size:3.15rem}
+  .catalog-hero .catalog-lead{font-size:1.05rem}
+}
