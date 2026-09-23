@@ -6,6 +6,8 @@ Den här mappen dokumenterar den fastslagna visuella riktningen för startsidan.
 
 **`approved-mockup-final.jpg` (1536 × 1024) är det primära och bindande visuella facit.**
 
+**De tre slutliga visuella referenserna från 2026-09-23 är visuellt facit.** Helhetsbilden styr desktopkompositionen, medan de två separata kortreferenserna styr Ultravasan- respektive Gotaleden-kortet. De har företräde framför äldre kod, commits, branches, README-texter och rekonstruerade mockuper.
+
 `approved-mockup.svg` är en äldre referens från utvecklingskedjan och får inte användas för att överstyra `approved-mockup-final.jpg`.
 
 Implementation ska i första hand följa referensen vad gäller komposition, proportioner, typografisk hierarki, färgtemperatur, bildutsnitt, loppkort och den mörka avslutande sektionen. Fri omtolkning ska undvikas när referensen är tydlig.
@@ -97,9 +99,12 @@ De senast uttryckligen godkända visuella referenserna är bindande för impleme
 
 ## Verifierade bildresurser
 
-- **Hero och Ultravasan-kort:** publicerad Sälen–Mora-bild från Ultravasan-projektet.
-- **Gotaleden-kort:** publicerad delningsbild från Gotaleden-projektet.
-- Ett särskilt framtidskortsmotiv kan ersätta den temporära naturbehandlingen när en godkänd bild finns.
+- **Hero:** `assets/hero-approved.jpg`, portallokal panoramabild med löpare på spång i varm solnedgång.
+- **Ultravasan-kort:** `assets/ultravasan-card.jpg`, portallokal och UI-fri kortbild med löpare på spång.
+- **Gotaleden-kort:** `assets/gotaleden-card.jpg`, portallokal och UI-fri kortbild med stig, lövskog och vitsippor.
+- **Fler lopp:** `assets/future-card.jpg`, portallokal och UI-fri, nedtonad skogs-/bergsvy.
+
+Statusetiketter, korttext och pilknappar ska alltid byggas i HTML/CSS och får inte vara den enda representationen inbakad i fotografiet.
 
 ## Viktigt
 
@@ -108,4 +113,6 @@ Designreferensen ska inte ersättas av fri designinterpretation utan uttryckligt
 
 ## Publiceringskälla
 
-Portalens kanoniska kod ligger på `main` i repository-roten. Under felsökningen 2026-09-23 konstaterades att GitHub Pages hade serverat den äldre branchen `feature/loppanalys-landing-page`. Den branchen hålls därför tillfälligt synkroniserad med `main` tills Pages-inställningen uttryckligen pekas om till **main / root**. Ingen ny utveckling ska göras direkt på den gamla feature-branchen.
+Portalens kanoniska kod ligger på `main` i repository-roten. Under felsökningen 2026-09-23 konstaterades att GitHub Pages faktiskt var konfigurerat för den äldre branchen `feature/loppanalys-landing-page` från `/ (root)`. Det förklarar varför äldre HTML kunde ligga kvar trots nyare kod på `main`.
+
+Pages-källan ändrades därefter uttryckligen till **`main` / `/ (root)`**. Ingen ny utveckling ska göras direkt på den gamla feature-branchen. Den kan ligga kvar som historik utan att påverka publiceringen.

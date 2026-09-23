@@ -4,7 +4,7 @@ const races = [
     name: 'Ultravasan',
     description: 'Djupanalys av UV90 och UV45 med resultat, pacing, replay, banprofil och historik.',
     url: '/ultravasan-analys/',
-    image: 'assets/ultravasan-card-approved.jpg',
+    image: 'assets/ultravasan-card.jpg',
     imageAlt: 'Löpare på spång genom skogslandskap i varmt kvällsljus',
     imagePosition: 'center center',
     status: 'Tillgänglig',
@@ -15,7 +15,7 @@ const races = [
     name: 'Gotaleden',
     description: 'Interaktiv analys av Gotaleden Stafett & Ultra med delsträckor, banprofil, kartor och replay.',
     url: '/gotaleden-splits/',
-    image: 'assets/gotaleden-card-approved.jpg',
+    image: 'assets/gotaleden-card.jpg',
     imageAlt: 'Stig genom grön lövskog med vita vitsippor',
     imagePosition: 'center center',
     status: 'Tillgänglig',
@@ -26,7 +26,7 @@ const races = [
     name: 'Fler lopp på väg',
     description: 'Österlen Spring Trail och fler spännande lopp kommer snart till Loppanalys.',
     url: null,
-    image: 'assets/future-card-approved.jpg',
+    image: 'assets/future-card.jpg',
     imageAlt: '',
     imagePosition: 'center center',
     status: 'Kommer snart',
@@ -40,9 +40,11 @@ const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({
 
 function raceCard(race){
   const media = '<img src="' + esc(race.image) + '" alt="' + esc(race.imageAlt) + '" loading="lazy" decoding="async" style="object-position:' + esc(race.imagePosition) + '">';
+  const status = '<span class="status-pill' + (race.available ? ' available' : '') + '">' + esc(race.status) + '</span>';
   const inner =
     '<div class="race-card-media">' +
       media +
+      status +
     '</div>' +
     '<div class="race-card-body">' +
       '<div class="race-card-copy">' +

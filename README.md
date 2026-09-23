@@ -9,7 +9,7 @@ Portalen är byggd som en statisk GitHub Pages-sajt och länkar vidare till sepa
 - `index.html` – semantisk startsida och metadata
 - `styles.css` – responsiv grafisk profil
 - `script.js` – liten datadriven loppkatalog och mobilnavigering
-- `assets/` – portalens egna SVG-resurser
+- `assets/` – portalens egna, webbanpassade foto- och SVG-resurser
 
 Lopp läggs till i `races`-listan i `script.js`.
 
@@ -21,3 +21,8 @@ Portalen använder rot-relativa länkar till analysprojekten:
 - `/gotaleden-splits/`
 
 Det gör att samma länkar fungerar både under GitHub Pages-domänen och när `loppanalys.se` kopplas som egen domän.
+
+
+## Publicering
+
+GitHub Pages publicerar från `main` och repository-roten (`/`). Frontsidan ska därför utvecklas via pull request till `main`; den äldre branchen `feature/loppanalys-landing-page` är inte längre publiceringskälla.
