@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Två stiliserade traillöpare</title>
+  <path d="M6 62c18-4 33-4 48-1 18 4 35 4 60-2" stroke="#0b3028" stroke-width="2.8" stroke-linecap="round"/>
+  <g stroke="#0b3028" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="36" cy="12" r="4.4" fill="#0b3028" stroke="none"/>
+    <path d="M34 20 28 35l10 7 10-15M28 35l-11 10M38 42l-9 16M47 28l10 6"/>
+    <path d="M30 22c5-2 10-1 15 2l-4 11-10-5  -1-8Z" fill="#f2c84b"/>
+    <path d="M42 21c5 1 8 5 9 10l-4 3-7-10 2-3Z" fill="#163d34"/>
+    <circle cx="76" cy="14" r="4.2" fill="#0b3028" stroke="none"/>
+    <path d="M74 22 68 36l10 7 9-14M68 36 58 45M78 43l-8 15M86 30l10 7"/>
+    <path d="M69 25c5-3 11-2 16 1l-4 11-11-4-1-8Z" fill="#e67e4b"/>
+    <path d="M81 23c4 2 7 5 8 10l-4 3-6-11 2-2Z" fill="#163d34"/>
+  </g>
+</svg>
