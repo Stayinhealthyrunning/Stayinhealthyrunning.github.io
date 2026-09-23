@@ -5,7 +5,7 @@ const races = [
     subtitle: 'UV90 & UV45',
     description: 'Resultat, pacing, replay, banprofil och historik för Ultravasan.',
     url: '/ultravasan-analys/',
-    image: 'design/reference/ultravasan-reference.svg',
+    image: 'https://stayinhealthyrunning.github.io/ultravasan-analys/assets/oxberg-mora-header.png',
     imageAlt: 'Ultralöpare på träspång genom myr och tallskog',
     status: 'Tillgänglig',
     available: true
@@ -16,7 +16,7 @@ const races = [
     subtitle: 'Stafett & Ultra',
     description: 'Delsträckor, banprofil, kartor, replay och resultat längs Gotaleden.',
     url: '/gotaleden-splits/',
-    image: 'design/reference/gotaleden-reference.svg',
+    image: 'https://stayinhealthyrunning.github.io/gotaleden-splits/assets/social/gotaleden-splits-share.png',
     imageAlt: 'Smal stig genom grön lövskog och vita vitsippor',
     status: 'Tillgänglig',
     available: true
