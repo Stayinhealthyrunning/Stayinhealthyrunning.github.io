@@ -4,9 +4,9 @@ const races = [
     name: 'Ultravasan',
     description: 'Djupanalys av UV90 och UV45 med resultat, pacing, replay, banprofil och historik.',
     url: '/ultravasan-analys/',
-    image: 'https://stayinhealthyrunning.github.io/ultravasan-analys/assets/salen-mora-header.png',
+    image: 'assets/ultravasan-card-approved.jpg',
     imageAlt: 'Löpare på spång genom skogslandskap i varmt kvällsljus',
-    imagePosition: 'center 50%',
+    imagePosition: 'center center',
     status: 'Tillgänglig',
     available: true
   },
@@ -15,9 +15,9 @@ const races = [
     name: 'Gotaleden',
     description: 'Interaktiv analys av Gotaleden Stafett & Ultra med delsträckor, banprofil, kartor och replay.',
     url: '/gotaleden-splits/',
-    image: 'https://stayinhealthyrunning.github.io/gotaleden-splits/assets/social/gotaleden-splits-share.png',
+    image: 'assets/gotaleden-card-approved.jpg',
     imageAlt: 'Stig genom grön lövskog med vita vitsippor',
-    imagePosition: 'center 48%',
+    imagePosition: 'center center',
     status: 'Tillgänglig',
     available: true
   },
@@ -26,9 +26,9 @@ const races = [
     name: 'Fler lopp på väg',
     description: 'Österlen Spring Trail och fler spännande lopp kommer snart till Loppanalys.',
     url: null,
-    image: 'https://stayinhealthyrunning.github.io/ultravasan-analys/assets/salen-mora-header.png',
+    image: 'assets/future-card-approved.jpg',
     imageAlt: '',
-    imagePosition: '8% 36%',
+    imagePosition: 'center center',
     status: 'Kommer snart',
     available: false
   }
@@ -43,7 +43,6 @@ function raceCard(race){
   const inner =
     '<div class="race-card-media">' +
       media +
-      '<span class="status-pill ' + (race.available ? 'available' : '') + '">' + esc(race.status) + '</span>' +
     '</div>' +
     '<div class="race-card-body">' +
       '<div class="race-card-copy">' +
