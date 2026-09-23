@@ -1,15 +1,15 @@
 :root{
-  --pine-950:#071f1a;
-  --pine-900:#0b3028;
+  --pine-950:#09251f;
+  --pine-900:#0d3129;
   --pine-800:#123e33;
-  --pine-700:#1d5a49;
-  --paper:#f8f7f2;
+  --pine-700:#1a5545;
+  --paper:#fbfaf6;
   --white:#fff;
-  --ink:#102923;
-  --muted:#5d6965;
-  --orange:#ff8431;
+  --ink:#122d27;
+  --muted:#5d6d68;
+  --orange:#f5823a;
   --line:rgba(16,41,35,.12);
-  --shadow:0 14px 34px rgba(9,35,29,.12);
+  --shadow:0 18px 48px rgba(13,49,41,.13);
   --max:1536px;
 }
 *{box-sizing:border-box}
@@ -39,11 +39,11 @@ button{font:inherit}
   padding:18px clamp(28px,5.4vw,84px) 14px;
   color:var(--pine-950)
 }
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:max-content}
-.brand img{width:78px;height:57px;object-fit:contain}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content}
+.brand img{width:70px;height:52px;object-fit:contain}
 .brand-copy{display:grid;gap:4px}
-.brand-copy strong{font-size:clamp(1.25rem,1.85vw,1.8rem);line-height:.95;font-weight:900;letter-spacing:-.045em}
-.brand-copy small{text-transform:uppercase;font-size:.61rem;letter-spacing:.31em;font-weight:760;color:#223e36}
+.brand-copy strong{font-size:clamp(1.2rem,1.85vw,1.78rem);line-height:.98;font-weight:850;letter-spacing:-.035em}
+.brand-copy small{text-transform:uppercase;font-size:.61rem;letter-spacing:.28em;font-weight:720;color:#223e36}
 .site-nav{display:flex;align-items:center;gap:clamp(23px,2.5vw,39px);font-size:.96rem;font-weight:600;margin-right:96px}
 .site-nav a{text-decoration:none;padding:10px 0 14px;position:relative}
 .site-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:2px;background:var(--pine-900);transition:right .18s ease}
@@ -94,8 +94,8 @@ button{font:inherit}
   transition:transform .18s ease,box-shadow .18s ease,background .18s ease
 }
 .button:hover,.button:focus-visible{transform:translateY(-2px)}
-.button-primary{background:var(--orange);color:#10231d;box-shadow:0 8px 22px rgba(255,132,49,.22)}
-.button-primary:hover,.button-primary:focus-visible{background:#ff944d;box-shadow:0 12px 28px rgba(255,132,49,.3)}
+.button-primary{background:var(--orange);color:#12281f;box-shadow:0 8px 22px rgba(255,132,49,.22)}
+.button-primary:hover,.button-primary:focus-visible{background:#ff9554;box-shadow:0 12px 28px rgba(255,132,49,.3)}
 .button-ghost{min-width:142px;border:1.5px solid rgba(255,255,255,.95);color:#fff;background:rgba(5,25,20,.14);backdrop-filter:blur(5px)}
 
 .hero-bottom{
@@ -120,9 +120,10 @@ button{font:inherit}
 .hero-signature span{padding:0 .45em;color:rgba(255,255,255,.68)}
 
 .section-shell{max-width:var(--max);margin:auto;padding-inline:clamp(28px,5.4vw,84px)}
+.race-layout.section-shell{max-width:var(--max)}
 
 .race-section{
-  position:relative;background:#faf9f5;overflow:hidden;border-bottom:1px solid rgba(16,41,35,.08)
+  position:relative;background:var(--paper);overflow:hidden;border-bottom:1px solid rgba(16,41,35,.08)
 }
 .contour-panel{
   position:absolute;inset:0 72% 0 0;background-image:url('assets/topography.svg');
@@ -132,7 +133,8 @@ button{font:inherit}
   position:relative;height:318px;
   display:grid;grid-template-columns:minmax(270px,290px) minmax(0,1fr);
   gap:35px;align-items:center;
-  padding-top:21px;padding-bottom:23px
+  padding-top:21px;padding-bottom:23px;
+  padding-left:clamp(28px,5.4vw,84px);padding-right:clamp(28px,3vw,46px)
 }
 .race-intro{align-self:center}
 .eyebrow{
@@ -147,9 +149,9 @@ button{font:inherit}
 
 .race-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .race-card{
-  height:270px;background:#fff;border-radius:12px;overflow:hidden;
+  height:270px;background:#fff;border-radius:14px;overflow:hidden;
   box-shadow:0 8px 24px rgba(13,49,41,.09);min-width:0;position:relative;
-  border:1px solid rgba(16,41,35,.055);
+  border:1px solid rgba(18,45,39,.07);
   transition:transform .2s ease,box-shadow .2s ease
 }
 .race-card-hit{display:block;color:inherit;text-decoration:none;height:100%}
@@ -162,16 +164,16 @@ button{font:inherit}
   background:linear-gradient(0deg,rgba(7,31,25,.12),transparent 50%)
 }
 .status-pill{
-  position:absolute;z-index:2;right:10px;top:10px;background:rgba(255,255,255,.93);
-  border-radius:999px;padding:6px 11px;font-size:.61rem;font-weight:850;letter-spacing:.035em;text-transform:uppercase;
+  position:absolute;z-index:2;right:9px;top:9px;background:rgba(255,255,255,.94);
+  border-radius:999px;padding:6px 11px;font-size:.64rem;font-weight:850;letter-spacing:.035em;text-transform:uppercase;
   color:#32423d;box-shadow:0 3px 10px rgba(0,0,0,.08)
 }
-.status-pill.available:before{content:"";display:inline-block;width:7px;height:7px;margin-right:6px;background:#45b874;border-radius:50%}
+.status-pill.available:before{content:"";display:inline-block;width:7px;height:7px;margin-right:6px;background:#53b76b;border-radius:50%}
 .race-card-body{
   min-height:94px;display:grid;grid-template-columns:1fr auto;gap:14px;
   padding:10px 14px 12px 15px;align-items:center
 }
-.race-card-body h3{font-size:1.11rem;line-height:1.08;margin:0 0 6px;letter-spacing:-.025em}
+.race-card-body h3{font-size:1.12rem;line-height:1.08;margin:0 0 6px;letter-spacing:-.025em}
 .race-card-body p{margin:0;color:#6a706e;font-size:.71rem;line-height:1.45}
 .race-card-action{
   width:39px;height:39px;border-radius:50%;background:#eff0ec;display:grid;place-items:center;
@@ -184,7 +186,7 @@ button{font:inherit}
 .race-card.coming .race-card-action{color:#223b33}
 
 .insight-band{
-  position:relative;min-height:246px;color:#fff;background:#0b2b24;overflow:hidden
+  position:relative;min-height:246px;color:#fff;background:#0d3129;overflow:hidden
 }
 .insight-bg{
   position:absolute;inset:0;
