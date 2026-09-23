@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loppanalys – interaktiva analyser av löplopp</title>
   <meta name="description" content="Loppanalys samlar interaktiva analyser av svenska löplopp – resultat, pacing, banprofiler, kartor, delsträckor, replay och jämförelser.">
-  <meta name="theme-color" content="#12382f">
+  <meta name="theme-color" content="#0b3028">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Loppanalys">
   <meta property="og:description" content="Interaktiva analyser av löplopp – resultat, pacing, banprofiler, kartor, delsträckor och loppets utveckling.">
@@ -16,7 +16,6 @@
   <meta name="twitter:description" content="Interaktiva analyser av löplopp – resultat, pacing, banprofiler, kartor och jämförelser.">
   <meta name="twitter:image" content="https://stayinhealthyrunning.github.io/ultravasan-analys/assets/salen-mora-header.png">
   <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
-  <link rel="preload" href="https://stayinhealthyrunning.github.io/ultravasan-analys/assets/salen-mora-header.png" as="image">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,7 +23,7 @@
 
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="Loppanalys – startsida">
-      <img src="assets/brand-mark.svg" alt="" width="72" height="56">
+      <img src="assets/brand-mark-light.svg" alt="" width="92" height="56">
       <span class="brand-copy">
         <strong>Loppanalys.se</strong>
         <small>Analysera mer. Upplev mer.</small>
@@ -38,10 +37,9 @@
 
     <nav id="site-nav" class="site-nav" aria-label="Huvudnavigering" data-nav>
       <a class="active" href="#top">Hem</a>
-      <a href="#om">Om</a>
       <a href="#lopp">Lopp</a>
+      <a href="#om">Om</a>
       <a href="#metodik">Metodik</a>
-      <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
 
@@ -51,30 +49,28 @@
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Löpning · trail · ultra · analys</p>
+          <p class="eyebrow">Interaktiva loppanalyser</p>
           <h1 id="hero-title">Loppanalys</h1>
-          <p class="hero-kicker">Interaktiva analyser av löplopp</p>
-          <p class="hero-text">Resultat, pacing, banprofiler, delsträckor, kartor och loppets utveckling – samlat på ett ställe.</p>
+          <p class="hero-kicker">Se loppet med nya ögon.</p>
+          <p class="hero-text">Resultat, pacing, banprofiler, delsträckor, kartor och historik – samlat i analyser som går djupare än en vanlig resultatlista.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#lopp">Utforska loppen <span aria-hidden="true">→</span></a>
-            <a class="button button-ghost" href="#om">Läs mer <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="#om">Så fungerar det</a>
           </div>
         </div>
-
-        <div class="hero-tag" aria-hidden="true">TRAIL <i></i> ULTRA <i></i> NATUR <i></i> ANALYS</div>
 
         <div class="hero-features" aria-label="Vad Loppanalys erbjuder">
           <article>
             <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M4 30V20h5v10H4Zm11 0V12h5v18h-5Zm11 0V5h5v25h-5Z"/></svg>
-            <div><strong>Djupgående resultatanalyser</strong><span>Tider, placeringar och utveckling</span></div>
+            <div><strong>Resultat & statistik</strong><span>Tider, placeringar och utveckling</span></div>
           </article>
           <article>
             <svg viewBox="0 0 36 36" aria-hidden="true"><path d="m3 8 9-4 12 5 9-4v23l-9 4-12-5-9 4V8Zm9-1v17m12-12v17"/></svg>
-            <div><strong>Banprofiler och interaktiva kartor</strong><span>Höjddata, delsträckor och terräng</span></div>
+            <div><strong>Kartor & banprofiler</strong><span>Höjddata, terräng och delsträckor</span></div>
           </article>
           <article>
             <svg viewBox="0 0 36 36" aria-hidden="true"><path d="m4 28 8-9 7 4 11-15M9 28h.01M17 20h.01M25 12h.01"/><circle cx="9" cy="28" r="2"/><circle cx="17" cy="20" r="2"/><circle cx="25" cy="12" r="2"/></svg>
-            <div><strong>Pacing och segmentjämförelser</strong><span>Analysera tempo och prestation</span></div>
+            <div><strong>Pacing & jämförelser</strong><span>Passager, tempo och prestation</span></div>
           </article>
         </div>
       </div>
@@ -85,8 +81,8 @@
       <div class="section-shell race-layout">
         <div class="race-intro">
           <p class="eyebrow dark">Våra lopp</p>
-          <h2 id="race-title">Välj ett lopp och utforska analysen</h2>
-          <p>Detaljerade analyser baserade på verkliga resultat och banor. Upptäck, jämför och hitta nya perspektiv på loppet.</p>
+          <h2 id="race-title">Välj lopp. Gå på djupet.</h2>
+          <p>Varje loppsida bygger på publicerade resultat, dokumenterade banor och samma grundidé: att göra loppets data begriplig, jämförbar och användbar.</p>
         </div>
         <div class="race-grid" data-race-grid aria-live="polite"></div>
       </div>
@@ -94,16 +90,16 @@
 
     <section class="about-section" id="om" aria-labelledby="about-title">
       <div class="section-shell about-grid">
-        <div>
+        <div class="about-copy">
           <p class="eyebrow light">Mer än en resultatlista</p>
           <h2 id="about-title">Samma lopp. Fler perspektiv.</h2>
-          <p>Loppanalys gör publicerade resultat och baninformation lättare att förstå. Målet är att ge fler sätt att se vad som faktiskt hände längs banan.</p>
+          <p>Loppanalys kopplar ihop resultat, passager och baninformation så att du kan förstå hur loppet faktiskt utvecklades – för en löpare, en grupp eller hela startfältet.</p>
         </div>
         <div class="about-points">
           <article><span>01</span><div><strong>Resultat & statistik</strong><p>Fördjupa dig i placeringar, tider, grupper och utveckling.</p></div></article>
-          <article><span>02</span><div><strong>Kartor & banprofiler</strong><p>Utforska loppets geografi, höjd och delsträckor i sitt sammanhang.</p></div></article>
-          <article><span>03</span><div><strong>Pacing & delsträckor</strong><p>Se var tempot förändras och jämför faktiska passager.</p></div></article>
-          <article><span>04</span><div><strong>Jämför & inspireras</strong><p>Följ loppets utveckling och jämför prestationer där data medger det.</p></div></article>
+          <article><span>02</span><div><strong>Kartor & banprofiler</strong><p>Se geografi, höjd och delsträckor i sitt sammanhang.</p></div></article>
+          <article><span>03</span><div><strong>Pacing & passager</strong><p>Se var tempot förändras och hur loppet byggs upp över tid.</p></div></article>
+          <article><span>04</span><div><strong>Historik & jämförelser</strong><p>Jämför prestationer och upplagor där datan medger det.</p></div></article>
         </div>
       </div>
     </section>
@@ -112,20 +108,20 @@
       <div class="section-shell method-layout">
         <div>
           <p class="eyebrow dark">Metodik</p>
-          <h2 id="method-title">Analys byggd på spårbar data</h2>
+          <h2 id="method-title">Spårbar data. Tydliga antaganden.</h2>
         </div>
         <div class="method-copy">
-          <p>Varje analys utgår från publicerade resultat, dokumenterade banor och tydligt redovisade beräkningsmetoder. När data saknas ska den inte hittas på.</p>
-          <p>Respektive loppsida beskriver sina källor, jämförelsegrupper och begränsningar mer i detalj.</p>
+          <p>Analyserna utgår från publicerade resultat, dokumenterade banor och redovisade beräkningsmetoder. När data saknas eller inte är jämförbar ska det framgå tydligt.</p>
+          <p>Respektive loppsida beskriver sina källor, definitioner, jämförelsegrupper och begränsningar mer i detalj.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="kontakt">
+  <footer class="site-footer">
     <div class="section-shell footer-inner">
       <div class="footer-brand">
-        <img src="assets/brand-mark-light.svg" alt="" width="78" height="60">
+        <img src="assets/brand-mark-light.svg" alt="" width="92" height="56">
         <div><strong>Loppanalys.se</strong><span>Analysera mer. Upplev mer.</span></div>
       </div>
       <p>Interaktiva loppanalyser utvecklade av <a href="https://github.com/Stayinhealthyrunning" rel="noopener noreferrer">Stayinhealthyrunning</a>.</p>
