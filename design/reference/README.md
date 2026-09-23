@@ -4,7 +4,9 @@ Den här mappen dokumenterar den fastslagna visuella riktningen för startsidan.
 
 ## Visuellt facit
 
-**Den godkända Loppanalys-skärmbilden och approved-mockup.svg är visuellt facit.**
+**`approved-mockup-final.jpg` (1536 × 1024) är det primära och bindande visuella facit.**
+
+`approved-mockup.svg` är en äldre referens från utvecklingskedjan och får inte användas för att överstyra `approved-mockup-final.jpg`.
 
 Implementation ska i första hand följa referensen vad gäller komposition, proportioner, typografisk hierarki, färgtemperatur, bildutsnitt, loppkort och den mörka avslutande sektionen. Fri omtolkning ska undvikas när referensen är tydlig.
 
@@ -12,9 +14,10 @@ Implementation ska i första hand följa referensen vad gäller komposition, pro
 
 Följande mått är avsiktliga riktvärden från den godkända bilden:
 
-- hero: cirka **490 px** hög
-- loppsektion: cirka **318 px** hög
-- mörkt avslutande analys-/varumärkesband: cirka **246 px** högt
+- hero: **490 px** hög
+- loppsektion: **317 px** hög
+- mörkt avslutande analys-/varumärkesband: **217 px** högt
+- summan är exakt **1024 px** i desktopreferensen
 - huvudinnehåll börjar cirka **84 px** från vänster kant
 - loppintro: cirka **290 px** brett
 - första loppkortet börjar cirka **410 px** från vänster kant
@@ -101,3 +104,8 @@ De senast uttryckligen godkända visuella referenserna är bindande för impleme
 ## Viktigt
 
 Designreferensen ska inte ersättas av fri designinterpretation utan uttryckligt beslut. Om implementation och den godkända referensen divergerar ska implementationen justeras mot referensen. Referera inte till bildfiler som inte faktiskt finns.
+
+
+## Publiceringskälla
+
+Portalens kanoniska kod ligger på `main` i repository-roten. Under felsökningen 2026-09-23 konstaterades att GitHub Pages hade serverat den äldre branchen `feature/loppanalys-landing-page`. Den branchen hålls därför tillfälligt synkroniserad med `main` tills Pages-inställningen uttryckligen pekas om till **main / root**. Ingen ny utveckling ska göras direkt på den gamla feature-branchen.
