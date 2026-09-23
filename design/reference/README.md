@@ -73,13 +73,23 @@ Kort:
   - Jämför & inspireras
 - Höger: vertikal skiljelinje, monokrom **vit** löparsymbol, Loppanalys.se, tagline och **LÖPNING GÖR LIVET STÖRRE**.
 
+## Slutligt bildfacit
+
+De senast uttryckligen godkända visuella referenserna är bindande för implementationen:
+
+- **Hero:** panoramabilden med löpare i gul tröja på träspång i varm solnedgång, med mörkgrön Loppanalys.se-header ovanpå bilden och den vita hero-typografin enligt referensen.
+- **Ultravasan-kort:** löpare bakifrån på träspång genom tall-/myrlandskap i varmt lågt ljus. Text: **“Djupanalys av UV90 och UV45 med resultat, pacing, replay, banprofil och historik.”** Status: **TILLGÄNGLIG**.
+- **Gotaleden-kort:** smal stig genom ljus lövskog med stora mattor av vita vitsippor. Text: **“Interaktiv analys av Gotaleden Stafett & Ultra med delsträckor, banprofil, kartor och replay.”** Status: **TILLGÄNGLIG**.
+- Ett tidigare mellanbeslut om Vasaloppsmålet som Ultravasan-kortmotiv är ersatt av ovanstående slutliga kortreferens.
+
 ## Grafisk riktning
 
 - Modern, nordisk och professionell trail-/ultrakänsla.
+- Kanonisk palett från den ursprungliga profilen: skogsgrönt **#09251f / #0d3129**, varm orange **#f5823a**, naturvit **#fbfaf6**, textgrönt **#122d27**.
 - Djup skogsgrön bas, varm orange accent och naturvita/varma ljusa ytor.
 - Naturfotografi ska bära känslan; undvik sportbutikskänsla och generiska motivationssymboler.
 - Sidan ska samtidigt kännas som ett seriöst analysverktyg: resultat, kartor, pacing, banprofiler, delsträckor och jämförelser.
-- Portalens löparsymbol används **monokromt i den godkända startsidan**: mörkgrön i headern och vit i avslutningen.
+- Den ursprungliga stiliserade två-löpare-symbolen från den fastslagna profilen är kanonisk och används **monokromt**: mörkgrön i headern och vit i avslutningen.
 - Responsiv mobilversion ska behålla samma visuella språk även när proportionerna måste ändras.
 
 ## Verifierade bildresurser
