@@ -498,3 +498,12 @@ button{font:inherit}
   .catalog-hero h1{font-size:3.15rem}
   .catalog-hero .catalog-lead{font-size:1.05rem}
 }
+.footer-analytics{
+  padding-top:0;
+  padding-bottom:18px;
+  text-align:center;
+  font-size:.62rem;
+  line-height:1.4;
+  color:rgba(255,255,255,.56);
+  letter-spacing:.02em;
+}
