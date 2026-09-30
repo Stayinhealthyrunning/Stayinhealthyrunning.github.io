@@ -18,7 +18,7 @@ export const races = [
     name: 'Gotaleden',
     description: 'Interaktiv analys av Gotaleden Stafett & Ultra med delsträckor, banprofil, kartor och replay.',
     url: '/gotaleden-splits/',
-    image: '/assets/gotaleden-card-sharp.jpg',
+    image: '/assets/gotaleden-card-sharp.jpg?v=20260930-sharp5',
     imageAlt: 'Kvinnlig traillöpare i gul tröja, korta löpartajts och löparryggsäck, sedd bakifrån på stig genom grön lövskog',
     imagePosition: 'center center',
     status: 'Tillgänglig',
