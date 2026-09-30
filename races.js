@@ -28,9 +28,23 @@ export const races = [
     years: []
   },
   {
+    key: 'osterlen-spring-trail',
+    name: 'Österlen Spring Trail',
+    description: 'Interaktiv analys av Österlen Spring Trail med resultat, pacing, banor, kartor och historik.',
+    url: '/osterlen-spring-trail-analys/',
+    image: '/assets/osterlen-spring-trail-card.webp?v=20260930-ost1',
+    imageAlt: 'Löpare på kuststig vid havet på Österlen med blommande träd och kustlandskap',
+    imagePosition: 'center 56%',
+    status: 'Tillgänglig',
+    available: true,
+    terrain: 'trail',
+    distances: ['5 km', '13–14 km', '21–22 km', '60 km'],
+    years: []
+  },
+  {
     key: 'future',
     name: 'Fler lopp på väg',
-    description: 'Österlen Spring Trail och fler spännande lopp kommer snart till Loppanalys.',
+    description: 'Fler spännande lopp kommer snart till Loppanalys.',
     url: null,
     image: '/assets/future-card.jpg',
     imageAlt: '',
