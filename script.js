@@ -1,4 +1,4 @@
-import { races } from '/races.js?v=20260930-runner3';
+import { races } from '/races.js?v=20260930-sharp4';
 
 const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({
   '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'
