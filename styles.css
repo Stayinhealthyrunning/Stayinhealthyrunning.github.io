@@ -160,6 +160,8 @@ button{font:inherit}
 .race-card-media{height:176px;background:#899a92;position:relative;overflow:hidden}
 .race-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
 .race-card.available:hover .race-card-media img,.race-card.available:focus-within .race-card-media img{transform:scale(1.035)}
+.race-card[data-race="gotaleden"] .status-pill{display:none}
+.race-card[data-race="gotaleden"].available:hover .race-card-media img,.race-card[data-race="gotaleden"].available:focus-within .race-card-media img{transform:none}
 .race-card-media:after{
   content:"";position:absolute;inset:0;
   background:linear-gradient(0deg,rgba(7,31,25,.12),transparent 50%)
