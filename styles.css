@@ -61,7 +61,7 @@ button{font:inherit}
   position:absolute;inset:0;
   background-image:url('assets/hero-approved.jpg');
   background-size:cover;
-  background-position:center center;
+  background-position:center 16%;
   transform:scale(1.002)
 }
 .hero-overlay{
@@ -409,7 +409,7 @@ button{font:inherit}
   position:relative;height:385px;min-height:385px;color:#fff;overflow:hidden;background:var(--pine-900)
 }
 .catalog-hero-media{
-  position:absolute;inset:0;background:url('/assets/hero-approved.jpg') center 57%/cover no-repeat;
+  position:absolute;inset:0;background:url('/assets/hero-approved.jpg') center 16%/cover no-repeat;
   transform:scale(1.002)
 }
 .catalog-hero-overlay{
@@ -475,7 +475,7 @@ button{font:inherit}
   .catalog-page .site-nav{color:var(--pine-950)}
   .catalog-page .site-nav a:after{display:none}
   .catalog-hero{height:430px;min-height:430px}
-  .catalog-hero-media{background-position:64% center}
+  .catalog-hero-media{background-position:64% 16%}
   .catalog-hero-overlay{background:linear-gradient(90deg,rgba(4,28,22,.86),rgba(5,31,25,.46)),linear-gradient(180deg,rgba(5,28,23,.22),rgba(5,28,23,.7))}
   .catalog-hero-inner{padding-top:115px;padding-bottom:48px}
   .catalog-hero h1{font-size:3.45rem}
