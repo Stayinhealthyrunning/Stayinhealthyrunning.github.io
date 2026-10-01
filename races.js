@@ -42,6 +42,20 @@ export const races = [
     years: []
   },
   {
+    key: 'satila-splits',
+    name: 'Sätila Splits',
+    description: 'Interaktiv analys av Sätila Trail med verkliga resultat och mellantider, pacing, löparprofiler, replay och banöversikt.',
+    url: '/satila-splits/',
+    image: '/assets/satila-splits-card.webp?v=20261001-satila1',
+    imageAlt: 'Traillöpare med löparväst längs en skogsstig intill sjön i varmt morgonljus',
+    imagePosition: '42% center',
+    status: 'Tillgänglig',
+    available: true,
+    terrain: 'trail',
+    distances: ['22 km', '43 km', '85 km'],
+    years: ['2016–2019', '2021–2025']
+  },
+  {
     key: 'future',
     name: 'Fler lopp på väg',
     description: 'Fler spännande lopp kommer snart till Loppanalys.',
