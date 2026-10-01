@@ -52,6 +52,17 @@ def main():
                     assert columns == expected_cols, (width, path, "grid columns", columns, expected_cols)
                     overflow = page.evaluate("() => ({width: innerWidth, scroll: document.documentElement.scrollWidth})")
                     assert overflow["scroll"] <= overflow["width"] + 1, (width, path, "document overflow", overflow)
+                    # Full-page screenshots do not reliably trigger loading="lazy"
+                    # for cards located below the mobile viewport. Scroll each card
+                    # into view and await decoding before capturing reproducible QA.
+                    images = grid.locator(".race-card img")
+                    for n in range(images.count()):
+                        candidate = images.nth(n)
+                        candidate.scroll_into_view_if_needed()
+                        candidate.evaluate("(image) => image.decode()")
+                        assert candidate.evaluate("(image) => image.complete && image.naturalWidth > 0"), (width, path, "unloaded race image", n)
+                    page.evaluate("() => window.scrollTo(0, 0)")
+                    page.wait_for_timeout(100)
                     assert errors == [], (width, path, errors)
                     page.screenshot(path=str(OUT / ("home" if path == "/" else "catalog")) + "-" + str(width) + ".png", full_page=True)
                     print("PASS", width, path, expected_cards, "cards", expected_cols, "columns", "Sätila image loaded", flush=True)
