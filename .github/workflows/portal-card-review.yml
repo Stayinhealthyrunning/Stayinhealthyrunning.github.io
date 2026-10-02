@@ -1,0 +1,48 @@
+name: Loppanalys portal race card review
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assets/**"
+      - "races.js"
+      - "script.js"
+      - "index.html"
+      - "lopp/**"
+      - "styles.css"
+      - "tests/portal_card_review.py"
+      - ".github/workflows/portal-card-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-card-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate both ES modules
+        shell: bash
+        run: |
+          node --input-type=module --check < script.js
+          node --input-type=module --check < races.js
+      - name: Install Chromium
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Assert the staged card and responsive page layout
+        env:
+          PORTAL_QA_OUT: /tmp/portal-qa
+        run: python tests/portal_card_review.py
+      - name: Preserve screenshots for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: satila-portal-preview
+          path: /tmp/portal-qa/
+          if-no-files-found: warn
+          retention-days: 7
