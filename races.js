@@ -15,7 +15,7 @@ export const races = [
   },
   {
     key: 'gotaleden',
-    name: 'Gotaleden',
+    name: 'Gotaleden Stafett och Ultra',
     description: 'Interaktiv analys av Gotaleden Stafett & Ultra med delsträckor, banprofil, kartor och replay.',
     url: '/gotaleden-splits/',
     image: '/assets/gotaleden-card-sharp.jpg?v=20260930-sharp5',
@@ -43,7 +43,7 @@ export const races = [
   },
   {
     key: 'satila-splits',
-    name: 'Sätila Splits',
+    name: 'Sätila Trail',
     description: 'Interaktiv analys av Sätila Trail med verkliga resultat och mellantider, pacing, löparprofiler, replay och banöversikt.',
     url: '/satila-splits/',
     image: '/assets/satila-splits-card.webp?v=20261001-satila1',

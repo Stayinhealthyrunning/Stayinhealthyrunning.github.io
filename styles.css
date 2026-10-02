@@ -242,6 +242,7 @@ button{font:inherit}
 /* Four featured analyses: keep the existing card visual language in a balanced 2-by-2 grid. */
 .race-layout{height:auto;min-height:317px;padding-top:34px;padding-bottom:34px}
 .race-layout .race-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.race-layout .race-card{height:auto;min-height:294px}
 
 @media (max-width:1120px){
   .site-header{padding-inline:28px}
@@ -442,7 +443,7 @@ button{font:inherit}
 .catalog-heading h2{font-size:clamp(2.1rem,3vw,3rem)}
 .catalog-heading>p:last-child{margin:0;color:#52615d;line-height:1.6;max-width:570px}
 .catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.catalog-grid .race-card{height:310px}
+.catalog-grid .race-card{height:auto;min-height:310px}
 .catalog-grid .race-card-media{height:190px}
 .catalog-grid .race-card-body{min-height:120px;padding:14px 18px 15px}
 .catalog-grid .race-card-body h3{font-size:1.22rem}

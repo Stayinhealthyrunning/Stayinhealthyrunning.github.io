@@ -43,6 +43,20 @@ def main():
                     assert grid.locator('[data-race="satila-splits"]').count() == 1, (width, path)
                     card = grid.locator('[data-race="satila-splits"]')
                     assert card.get_attribute("data-status") == "available", (width, path)
+                    assert card.locator(".race-card-body h3").inner_text() == "Sätila Trail", (width, path, "Sätila card title")
+                    gotaleden = grid.locator('[data-race="gotaleden"]')
+                    assert gotaleden.locator(".race-card-body h3").inner_text() == "Gotaleden Stafett och Ultra", (width, path, "Gotaleden card title")
+                    assert gotaleden.locator("a.race-card-hit").get_attribute("href") == "/gotaleden-splits/", (width, path, "Gotaleden URL changed")
+                    for labelled_card in (card, gotaleden):
+                        assert labelled_card.evaluate("""(article) => {
+                          const bound = article.getBoundingClientRect();
+                          const title = article.querySelector('h3').getBoundingClientRect();
+                          const description = article.querySelector('.race-card-body p').getBoundingClientRect();
+                          const content = article.querySelector('.race-card-copy').getBoundingClientRect();
+                          return title.left >= bound.left && title.right <= bound.right + 1 &&
+                            description.left >= bound.left && description.right <= bound.right + 1 &&
+                            content.bottom <= bound.bottom - 3;
+                        }"""), (width, path, "card copy clipped or outside card", labelled_card.get_attribute("data-race"))
                     link = card.locator("a.race-card-hit")
                     assert link.count() == 1 and link.get_attribute("href") == "/satila-splits/", (width, path)
                     img = card.locator("img")
