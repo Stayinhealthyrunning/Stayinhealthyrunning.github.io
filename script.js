@@ -1,4 +1,4 @@
-import { races } from '/races.js?v=20260930-ost1';
+import { races } from '/races.js?v=20261005-carousel1';
 
 const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({
   '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'
@@ -39,6 +39,30 @@ document.querySelectorAll('[data-race-grid]').forEach(grid => {
   const limit = Number.parseInt(grid.dataset.limit || '', 10);
   const visibleRaces = Number.isFinite(limit) ? races.slice(0, limit) : races;
   grid.innerHTML = visibleRaces.map(raceCard).join('');
+});
+
+document.querySelectorAll('[data-race-scroll]').forEach(scroller => {
+  const carousel = scroller.closest('.race-carousel');
+  const prev = carousel?.querySelector('[data-race-prev]');
+  const next = carousel?.querySelector('[data-race-next]');
+  if (!prev || !next) return;
+
+  const step = () => {
+    const card = scroller.querySelector('.race-card');
+    if (!card) return scroller.clientWidth;
+    const gap = Number.parseFloat(getComputedStyle(scroller).columnGap || getComputedStyle(scroller).gap || '18') || 18;
+    return card.getBoundingClientRect().width + gap;
+  };
+  const update = () => {
+    const max = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+    prev.disabled = scroller.scrollLeft <= 2;
+    next.disabled = scroller.scrollLeft >= max - 2;
+  };
+  prev.addEventListener('click', () => scroller.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => scroller.scrollBy({ left: step(), behavior: 'smooth' }));
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 });
 
 const toggle = document.querySelector('[data-menu-toggle]');
