@@ -42,6 +42,20 @@ export const races = [
     years: []
   },
   {
+    key: 'satila-trail',
+    name: 'Sätila Trail',
+    description: 'Interaktiv analys av Sätila Trail Run med resultat, mellantider, banprofiler, kartor och historik.',
+    url: '/satila-splits/',
+    image: '/satila-splits/assets/hero.webp?v=20261005-publish1',
+    imageAlt: 'Traillöpare i skogslandskapet kring Sätila och Lygnern',
+    imagePosition: 'center center',
+    status: 'Tillgänglig',
+    available: true,
+    terrain: 'trail',
+    distances: ['22 km', '43 km', '85 km'],
+    years: []
+  },
+  {
     key: 'future',
     name: 'Fler lopp på väg',
     description: 'Fler spännande lopp kommer snart till Loppanalys.',
