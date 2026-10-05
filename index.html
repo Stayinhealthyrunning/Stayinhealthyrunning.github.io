@@ -17,7 +17,7 @@
   <meta name="twitter:description" content="Interaktiva analyser av löplopp – analysera mer, upplev mer.">
   <meta name="twitter:image" content="https://www.loppanalys.se/assets/hero-approved.jpg">
   <link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css?v=20260930-sharp5">
+  <link rel="stylesheet" href="/styles.css?v=20261005-carousel1">
 </head>
 <body>
   <a class="skip-link" href="#main">Hoppa till innehållet</a>
@@ -87,7 +87,11 @@
           <h2 id="race-title">Välj ett lopp och utforska analysen</h2>
           <p>Detaljerade analyser baserade på verkliga resultat och banor. Upptäck, jämför och inspireras.</p>
         </div>
-        <div class="race-grid" data-race-grid data-limit="3" aria-live="polite"></div>
+        <div class="race-carousel" aria-label="Tillgängliga lopp">
+          <button class="race-scroll race-scroll-prev" type="button" data-race-prev aria-label="Visa föregående lopp">←</button>
+          <div class="race-grid race-grid-scroll" data-race-grid data-race-scroll aria-live="polite"></div>
+          <button class="race-scroll race-scroll-next" type="button" data-race-next aria-label="Visa nästa lopp">→</button>
+        </div>
       </div>
     </section>
 
@@ -216,7 +220,7 @@
     <div class="section-shell footer-analytics">Webbplatsen använder cookiefri Cloudflare Web Analytics för trafik- och prestandastatistik.</div>
   </footer>
 
-  <script type="module" src="/script.js?v=20260930-ost1"></script>
+  <script type="module" src="/script.js?v=20261005-carousel1"></script>
   <!-- deployment-marker: race-catalog-methodology-contact-2026-09-23 -->
   <!-- Cloudflare Web Analytics: production hostname only -->
   <script>
