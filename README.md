@@ -1,5 +1,12 @@
 # Loppanalys.se
 
+## Standard för nya analysverktyg – NORMERANDE
+
+**Nya analysverktyg för Loppanalys.se ska byggas enligt [Loppanalys Standard 1.0](standards/LOPPANALYS_STANDARD_V1_0.md).** Den här rapporten är den centrala, normerande produkt- och acceptansspecifikationen för nya lopp – inte bara en skiss eller inspiration.
+
+Vid ett nytt lopp ska Codex **först läsa [startinstruktionen](standards/CODEX_START_HAR.md), därefter [hela specifikationen](standards/LOPPANALYS_STANDARD_V1_0.md)** och de övriga [standardfilerna](standards/README.md) innan design och kod tas fram. De fyra befintliga analysverktygen behöver inte byggas om för att passa mallen.
+
+
 Gemensam portal för interaktiva analyser av svenska löplopp.
 
 Portalen är byggd som en statisk GitHub Pages-sajt och länkar vidare till separata analysprojekt. De första loppen är Ultravasan och Gotaleden. Strukturen är avsiktligt enkel att utöka med fler lopp.
