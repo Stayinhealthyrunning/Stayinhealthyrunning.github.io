@@ -1,0 +1,343 @@
+{
+  "spec_version": "1.0.0",
+  "project": "Loppanalys.se",
+  "locale": "sv-SE",
+  "navigation": {
+    "fixed_order": [
+      "race-header",
+      "race-facts",
+      "runner-finder",
+      "runner-analysis",
+      "direct-comparison",
+      "map-duel",
+      "personal-plan",
+      "field-overview",
+      "extended-analysis",
+      "course-history",
+      "results-database",
+      "methodology"
+    ],
+    "default_year": "latest_available_edition",
+    "profile_direct_link": true,
+    "preserve_cross_year_selection": true,
+    "browser_history": true
+  },
+  "race_facts": {
+    "desktop_min_width_px": 900,
+    "desktop_columns": 5,
+    "desktop_rows": 1,
+    "cards": [
+      "starters",
+      "finishers",
+      "dnf",
+      "sex_times",
+      "fastest"
+    ],
+    "scope": "entire_edition",
+    "sex_times_single_card": true,
+    "sex_times_primary": "median",
+    "sex_times_secondary": "arithmetic_mean",
+    "sex_time_groups": [
+      "F",
+      "M"
+    ],
+    "percentage_decimals": 1,
+    "min_group_n": 5,
+    "count_unknown_as_starter": false,
+    "count_dns_as_starter": false
+  },
+  "selection": {
+    "finder_first_page_size": 10,
+    "comparison_chip_fields": [
+      "displayName",
+      "year"
+    ],
+    "direct_min": 2,
+    "direct_max": 2,
+    "map_duel_min": 2,
+    "map_duel_max": 5,
+    "favorites_scope": "event_and_result_id",
+    "search_debounce_ms": 200
+  },
+  "comparison": {
+    "contract_id": "loppanalys-comparison-2.0",
+    "contract_source": "ultravasan-analys/config/comparison-contract-v2.json",
+    "cross_year_finish_requires_explicit_whole_course_comparability": true,
+    "cross_year_segment_requires_explicit_segment_comparability": true,
+    "official_checkpoint_gap_never_interpolated": true
+  },
+  "replay": {
+    "default_duration_s": 120,
+    "duration_options_s": [
+      30,
+      60,
+      120,
+      180
+    ],
+    "default_camera_two": "follow_both",
+    "camera_options_two": [
+      "whole_course",
+      "follow_both",
+      "follow_leader"
+    ],
+    "default_volume": 0.3,
+    "autoplay_audio": false,
+    "elevation_below_map": true,
+    "camera_smooth": true,
+    "reduced_motion": true,
+    "position_origin": "observed_anchors_derived_display_only"
+  },
+  "plan": {
+    "default_target": "edition_finish_median",
+    "min_complete_profiles": 5,
+    "method": "median_normalized_segment_finish_time_shares",
+    "rounding": "largest_remainder_to_exact_target",
+    "distance_based_fallback_requires_verified_segment_distance": true
+  },
+  "statistics": {
+    "median_min_n": 5,
+    "quartiles_min_n": 10,
+    "deciles_min_n": 20,
+    "group_min_n": 5,
+    "percentiles": [
+      10,
+      25,
+      50,
+      75,
+      90
+    ],
+    "quantile_interpolation": "linear_n_minus_one",
+    "histogram_default_bin_minutes": 15,
+    "finishers_only_for_finish_time": true
+  },
+  "design": {
+    "max_content_width_px": 1440,
+    "page_padding_desktop_px": 24,
+    "page_padding_mobile_px": 12,
+    "section_gap_px": 20,
+    "card_gap_px": 12,
+    "card_padding_px": 16,
+    "card_radius_px": 12,
+    "control_min_height_px": 44,
+    "sex_colors": {
+      "M": "#2563EB",
+      "F": "#DB2777"
+    },
+    "comparison_role_colors": {
+      "A": "#2563EB",
+      "B": "#C026D3"
+    },
+    "slope_colors_order": [
+      "green",
+      "yellow",
+      "orange",
+      "red"
+    ],
+    "breakpoints_px": [
+      600,
+      900,
+      1200
+    ],
+    "responsive_viewports": [
+      [
+        1536,
+        1024
+      ],
+      [
+        1440,
+        900
+      ],
+      [
+        1200,
+        900
+      ],
+      [
+        1024,
+        768
+      ],
+      [
+        900,
+        900
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        360,
+        800
+      ]
+    ],
+    "graph_axes_required": true,
+    "default_speed_unit": "min/km",
+    "avoid_horizontal_document_overflow": true
+  },
+  "media": {
+    "social_image_target_px": [
+      1200,
+      630
+    ],
+    "requires_license": true,
+    "music_optional": true
+  },
+  "privacy": {
+    "export_sanitized_only": true,
+    "deny_raw_result_export": true,
+    "deny_private_participant_gpx_publication_without_approval": true,
+    "canonical_person_merge_verified_only": true
+  },
+  "data_delivery": {
+    "bootstrap_gzip_target_bytes": 10240,
+    "selected_race_gzip_target_bytes": 76800,
+    "bootstrap_plus_race_target_bytes": 102400,
+    "lazy_history": true,
+    "lazy_route": true,
+    "lazy_replay": true
+  },
+  "method_help": {
+    "required_for_every_analytic_card": true,
+    "catalog_file": "HELP_CONTENT_SV_V1_0.json",
+    "minimum_entries": 51
+  },
+  "release": {
+    "draft_pr_default": true,
+    "merge_after_explicit_approval": true,
+    "tests_exact_head_sha_required": true,
+    "privacy_export_scan_required": true,
+    "visual_regression_required": true
+  },
+  "module_help_ids": {
+    "race-header": [
+      "help-data-status"
+    ],
+    "race-facts": [
+      "help-starters",
+      "help-finishers",
+      "help-dnf",
+      "help-times-sex",
+      "help-fastest"
+    ],
+    "runner-finder": [
+      "help-search",
+      "help-comparison-selection",
+      "help-favorites"
+    ],
+    "runner-analysis": [
+      "help-runner-summary",
+      "help-runner-relative",
+      "help-runner-segment-time",
+      "help-runner-placement",
+      "help-runner-gap",
+      "help-runner-pacing",
+      "help-runner-splits",
+      "help-runner-replay"
+    ],
+    "direct-comparison": [
+      "help-head-to-head",
+      "help-head-to-head-segments",
+      "help-head-to-head-field",
+      "help-map-geometry",
+      "help-replay-controls"
+    ],
+    "map-duel": [
+      "help-map-duel",
+      "help-map-geometry",
+      "help-replay-controls"
+    ],
+    "personal-plan": [
+      "help-race-plan",
+      "help-race-plan-pace"
+    ],
+    "finish-distribution": [
+      "help-finish-distribution"
+    ],
+    "finish-percentiles": [
+      "help-percentiles"
+    ],
+    "target-vs-place": [
+      "help-time-to-place"
+    ],
+    "time-vs-place": [
+      "help-time-vs-place"
+    ],
+    "status-breakdown": [
+      "help-status-breakdown"
+    ],
+    "dnf-course-flow": [
+      "help-dnf-flow"
+    ],
+    "segment-stats": [
+      "help-segment-character"
+    ],
+    "segment-lab": [
+      "help-segment-lab"
+    ],
+    "placement-gains": [
+      "help-placement-gains"
+    ],
+    "strongest-finish": [
+      "help-strongest-finish"
+    ],
+    "standouts": [
+      "help-standouts"
+    ],
+    "pacing-retention": [
+      "help-pacing-retention"
+    ],
+    "field-spread": [
+      "help-field-spread"
+    ],
+    "gender-classes": [
+      "help-gender-class"
+    ],
+    "age": [
+      "help-age"
+    ],
+    "clubs": [
+      "help-clubs"
+    ],
+    "podium": [
+      "help-podium"
+    ],
+    "edition-history": [
+      "help-edition-history"
+    ],
+    "person-history": [
+      "help-person-history"
+    ],
+    "course-difficulty": [
+      "help-course"
+    ],
+    "route-version": [
+      "help-course-versions"
+    ],
+    "results-database": [
+      "help-results"
+    ],
+    "methodology": [
+      "help-method",
+      "help-coverage",
+      "help-privacy",
+      "help-filters"
+    ]
+  },
+  "action_contract": {
+    "add_to_comparison": "add_unique_edition_scoped_result_then_toggle_button_label_and_chip_counter",
+    "remove_from_comparison": "remove_exact_result_without_affecting_other_selections",
+    "open_profile": "open_real_runner_analysis_and_move_focus_to_heading",
+    "open_direct_comparison": "require_exactly_two_and_apply_evidence_rules",
+    "start_map_duel": "require_between_two_and_five_valid_selections",
+    "plan_race": "build_evidence_based_plan_from_selected_target",
+    "share": "share_or_copy_verified_absolute_deep_link_with_failure_feedback",
+    "play_pause_replay": "synchronize_clock_map_elevation_and_seek_position",
+    "seek_checkpoint": "move_playhead_to_real_observation_only",
+    "select_segment": "synchronize_course_map_elevation_chart_and_table",
+    "reset_selection": "clear_only_target_selection_scope",
+    "open_help": "open_matching_central_help_entry_with_focus_management",
+    "close_modal": "close_without_losing_selected_results_then_restore_focus"
+  }
+}

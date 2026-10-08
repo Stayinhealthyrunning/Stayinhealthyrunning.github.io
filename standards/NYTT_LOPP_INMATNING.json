@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "template_version": "1.0.0",
+  "status": "INCOMPLETE_CONFIG_DO_NOT_DEPLOY",
+  "event": {
+    "event_id": null,
+    "official_name": null,
+    "short_name": null,
+    "description_sv": null,
+    "official_organizer_url": null,
+    "canonical_url": null,
+    "default_race_family_id": null,
+    "hero_asset": null,
+    "hero_alt_sv": null,
+    "og_image_asset": null,
+    "music_asset": null,
+    "music_publication_approved": false,
+    "brand_primary_color": null,
+    "brand_secondary_color": null
+  },
+  "race_families": [],
+  "race_editions": [],
+  "source_bindings": [],
+  "course_versions": [],
+  "whole_course_comparability_groups": [],
+  "segment_comparability_rules": [],
+  "verified_identity_links": [],
+  "privacy_rules_reference": null,
+  "notes_to_developer": [
+    "All nulls and empty lists are unsupplied event facts, not default values.",
+    "Create each edition with explicit provider source binding and immutable course version.",
+    "Do not publish until source, rights, capability, and approval checks pass."
+  ]
+}

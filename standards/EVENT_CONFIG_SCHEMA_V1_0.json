@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.loppanalys.se/schemas/event-config-v1.0.0.json",
+  "title": "Loppanalys – eventkonfiguration för nya lopp",
+  "description": "JSON Schema för färdig verifierad eventkonfiguration. NYTT_LOPP_INMATNING.json är avsiktligt ej giltig före ifyllning.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "template_version", "status", "event", "race_families", "race_editions", "source_bindings", "course_versions", "whole_course_comparability_groups", "segment_comparability_rules", "privacy_rules_reference"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "template_version": {"type": "string", "pattern": "^1\\.[0-9]+\\.[0-9]+$"},
+    "status": {"const": "VERIFIED_READY_FOR_BUILD"},
+    "event": {"$ref": "#/$defs/Event"},
+    "race_families": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/RaceFamily"}},
+    "race_editions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/RaceEdition"}},
+    "source_bindings": {"type": "array", "items": {"$ref": "#/$defs/SourceBinding"}},
+    "course_versions": {"type": "array", "items": {"$ref": "#/$defs/CourseVersion"}},
+    "whole_course_comparability_groups": {"type": "array", "items": {"$ref": "#/$defs/ComparisonGroup"}},
+    "segment_comparability_rules": {"type": "array", "items": {"$ref": "#/$defs/SegmentRule"}},
+    "verified_identity_links": {"type": "array", "items": {"type": "object"}},
+    "privacy_rules_reference": {"type": "string", "minLength": 1},
+    "notes_to_developer": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "NonBlank": {"type": "string", "minLength": 1},
+    "Event": {
+      "type": "object",
+      "required": ["event_id", "official_name", "short_name", "description_sv", "official_organizer_url", "canonical_url", "default_race_family_id", "hero_asset", "hero_alt_sv", "og_image_asset", "brand_primary_color", "brand_secondary_color", "music_publication_approved"],
+      "properties": {
+        "event_id": {"$ref": "#/$defs/NonBlank"},
+        "official_name": {"$ref": "#/$defs/NonBlank"},
+        "short_name": {"$ref": "#/$defs/NonBlank"},
+        "description_sv": {"$ref": "#/$defs/NonBlank"},
+        "official_organizer_url": {"type": "string", "format": "uri"},
+        "canonical_url": {"type": "string", "format": "uri"},
+        "default_race_family_id": {"$ref": "#/$defs/NonBlank"},
+        "hero_asset": {"$ref": "#/$defs/NonBlank"},
+        "hero_alt_sv": {"$ref": "#/$defs/NonBlank"},
+        "og_image_asset": {"$ref": "#/$defs/NonBlank"},
+        "music_asset": {"type": ["string", "null"]},
+        "music_publication_approved": {"type": "boolean"},
+        "brand_primary_color": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+        "brand_secondary_color": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"}
+      },
+      "additionalProperties": false
+    },
+    "RaceFamily": {
+      "type": "object",
+      "required": ["race_family_id", "official_label", "display_order", "participant_entity", "competition_format"],
+      "properties": {
+        "race_family_id": {"$ref": "#/$defs/NonBlank"},
+        "official_label": {"$ref": "#/$defs/NonBlank"},
+        "display_order": {"type": "integer", "minimum": 0},
+        "advertised_distance_km": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "participant_entity": {"enum": ["person", "team"]},
+        "competition_format": {"enum": ["individual", "relay", "other"]}
+      },
+      "additionalProperties": false
+    },
+    "RaceEdition": {
+      "type": "object",
+      "required": ["edition_id", "race_family_id", "year", "data_status", "participant_entity"],
+      "properties": {
+        "edition_id": {"$ref": "#/$defs/NonBlank"},
+        "race_family_id": {"$ref": "#/$defs/NonBlank"},
+        "year": {"type": "integer", "minimum": 1900, "maximum": 2200},
+        "event_date": {"type": ["string", "null"], "format": "date"},
+        "data_status": {"enum": ["available", "planned", "cancelled", "unavailable"]},
+        "participant_entity": {"enum": ["person", "team"]},
+        "source_binding_id": {"type": ["string", "null"]},
+        "course_version_id": {"type": ["string", "null"]},
+        "advertised_distance_km": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "verified_route_distance_km": {"type": ["number", "null"], "exclusiveMinimum": 0}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"data_status": {"const": "available"}}, "required": ["data_status"]}, "then": {"required": ["source_binding_id"], "properties": {"source_binding_id": {"$ref": "#/$defs/NonBlank"}}}}
+      ]
+    },
+    "SourceBinding": {
+      "type": "object",
+      "required": ["source_binding_id", "provider", "source_event", "source_url", "rights_status", "import_adapter"],
+      "properties": {
+        "source_binding_id": {"$ref": "#/$defs/NonBlank"},
+        "provider": {"$ref": "#/$defs/NonBlank"},
+        "source_event": {"$ref": "#/$defs/NonBlank"},
+        "source_url": {"type": "string", "format": "uri"},
+        "rights_status": {"enum": ["permitted", "restricted", "review_required"]},
+        "import_adapter": {"$ref": "#/$defs/NonBlank"}
+      },
+      "additionalProperties": false
+    },
+    "CourseVersion": {
+      "type": "object",
+      "required": ["course_version_id", "evidence_level", "route_redistribution_approved", "fingerprint", "analytical_pace_eligible"],
+      "properties": {
+        "course_version_id": {"$ref": "#/$defs/NonBlank"},
+        "evidence_level": {"enum": ["exact_source_year", "verified_shared_course", "reference_only", "provisional", "unavailable"]},
+        "route_asset": {"type": ["string", "null"]},
+        "route_redistribution_approved": {"type": "boolean"},
+        "fingerprint": {"type": "string", "minLength": 12},
+        "analytical_pace_eligible": {"type": "boolean"},
+        "elevation_method": {"type": ["string", "null"]},
+        "checkpoints": {"type": "array", "items": {"type": "object", "required": ["checkpoint_id", "label"], "properties": {"checkpoint_id": {"$ref": "#/$defs/NonBlank"}, "label": {"$ref": "#/$defs/NonBlank"}, "role": {"enum": ["analysis_boundary", "timing_only", "replay_anchor"]}}, "additionalProperties": false}}
+      },
+      "additionalProperties": false
+    },
+    "ComparisonGroup": {
+      "type": "object",
+      "required": ["group_id", "edition_ids", "source_evidence_ref"],
+      "properties": {
+        "group_id": {"$ref": "#/$defs/NonBlank"},
+        "edition_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/NonBlank"}},
+        "source_evidence_ref": {"$ref": "#/$defs/NonBlank"}
+      },
+      "additionalProperties": false
+    },
+    "SegmentRule": {
+      "type": "object",
+      "required": ["course_version_a", "course_version_b", "segment_pairs", "source_evidence_ref"],
+      "properties": {
+        "course_version_a": {"$ref": "#/$defs/NonBlank"},
+        "course_version_b": {"$ref": "#/$defs/NonBlank"},
+        "segment_pairs": {"type": "array", "minItems": 1, "items": {"type": "array", "prefixItems": [{"$ref": "#/$defs/NonBlank"}, {"$ref": "#/$defs/NonBlank"}], "minItems": 2, "maxItems": 2}},
+        "source_evidence_ref": {"$ref": "#/$defs/NonBlank"}
+      },
+      "additionalProperties": false
+    }
+  }
+}
