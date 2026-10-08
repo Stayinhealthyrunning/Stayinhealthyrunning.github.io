@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0.0",
+  "source": "LOPPANALYS_STANDARD_V1_0.md §13",
+  "note": "Complete baseline copy. Runtime may supplement with verified edition metadata, not invent source values.",
+  "items": {
+    "help-filters": {
+      "title": "Filter och urval",
+      "body": "**Vad visas?** Filter avgränsar vilka publicerade deltagarresultat som ingår i analyserna längre ned. **Underlag:** vald distans/upplaga och officiella resultat; kön, klass, klubb/ort och status används bara när respektive källa har fältet. **Metod:** flera aktiva filter kombineras med OCH, och statistik beräknas om på det filtrerade urvalet. **Tolkning:** en filterstyrd median beskriver bara urvalet, inte hela loppet. **Begränsning:** översta `Loppet i siffror` visar alltid hela den valda upplagans officiella totaler; individuell profil och fasta referenskohorter förändras inte av filtren. Okänt kön eller ålder gissas aldrig.",
+      "locale": "sv-SE"
+    },
+    "help-data-status": {
+      "title": "Officiellt, härlett och rekonstruerat",
+      "body": "**Vad visas?** Officiella resultat, kontroller och placeringar kan ligga till grund för vidare uträkningar. **Underlag:** publicerade resultattider, godkända banor och dokumenterad metodik. **Metod:** segmenttid är differensen mellan två verkliga passager; median är en beräkning; replayposition mellan passager är en interpolerad visning längs tillåten bana. **Tolkning:** samma graf kan innehålla verkliga ankare och illustrativa positioner, markerade var för sig. **Begränsning:** vi kan inte veta exakt var en löpare befann sig eller passerade en annan mellan tidtagningarna.",
+      "locale": "sv-SE"
+    },
+    "help-starters": {
+      "title": "Startande",
+      "body": "**Vad visas?** Antal deltagare eller lag som enligt resultatkällans statusuppgifter påbörjade vald tävling. **Källa/urval:** samtliga publika resultat för vald distans och upplaga, oberoende av analysfiltren. **Metod:** FINISHED, DNF, DSQ och andra uttryckligen verifierade startstatusar räknas som startande; DNS och UNKNOWN räknas inte. **Tolkning:** talet anger tävlingsstarter, inte nödvändigtvis alla som var anmälda. **Begränsning:** om arrangören inte skiljer startande från anmälda visar vi `Ej fastställt` och hittar inte på ett antal.",
+      "locale": "sv-SE"
+    },
+    "help-finishers": {
+      "title": "Fullföljde",
+      "body": "**Vad visas?** Antal resultat med verifierad målgång samt andelen av verifierat startande. **Källa/urval:** officiella resultat i vald RaceEdition, inte det nedanför filtrerade fältet. **Metod:** räkna FINISHED med positiv officiell sluttid; fullföljandegrad = `100 × antal fullföljande / antal startande`, avrundat till en decimal. **Tolkning:** 81,6 % innebär att cirka 82 av 100 verifierade startande fullföljde. **Begränsning:** DSQ och UNKNOWN ingår inte som fullföljande. Saknas tillförlitlig startnämnare visas ingen procentsats.",
+      "locale": "sv-SE"
+    },
+    "help-dnf": {
+      "title": "DNF",
+      "body": "**Vad visas?** Antal som enligt officiell källa startade men inte fullföljde (`DNF`). **Källa/urval:** publicerad status för vald distans och upplaga. **Metod:** räkna bara explicit DNF; DNF-andel = `100 × DNF / startande`. **Tolkning:** avhoppen ska sättas i relation till startande, inte enbart anmälda. **Begränsning:** DNS (kom aldrig till start), DSQ (diskvalificerad) och UNKNOWN ingår inte i DNF. Antalet anger inte var eller varför någon bröt.",
+      "locale": "sv-SE"
+    },
+    "help-times-sex": {
+      "title": "Tider för kvinnor och män",
+      "body": "**Vad visas?** Tidsnivåer för kvinnor och män i **ett gemensamt kort**. **Källa/urval:** officiella positiva sluttider för FINISHED i vald upplaga med publicerad könsgrupp. **Metod:** median = mittersta sluttiden sorterad i stigande ordning; medeltid = alla sluttiders summa delat med antalet, för respektive grupp. Båda visas separat och med namn – de får inte blandas ihop. **Tolkning:** median är oftast mer robust mot enstaka mycket långa sluttider; medeltid påverkas av alla tider. **Begränsning:** grupper med färre än fem giltiga tider får `Otillräckligt underlag`; saknat kön exkluderas bara från könskorten, inte från totalresultatet. Vid lag används källans verifierade lagklasser i stället.",
+      "locale": "sv-SE"
+    },
+    "help-fastest": {
+      "title": "Snabbaste tid",
+      "body": "**Vad visas?** Lägsta publicerade positiva sluttid bland alla FINISHED i vald upplaga. **Källa/urval:** officiella slutresultat, oberoende av sekundära fältfilter. **Metod:** minsta `finish_seconds` och motsvarande tävlingsresultat; vid exakt lika tider märks delad snabbaste tid. **Tolkning:** detta är en sluttid, inte en automatiskt säker banrekordnotering över andra år. **Begränsning:** olika års banor kan skilja sig; banrekord får bara anges när regler och banjämförbarhet har verifierats. Anonymiserade löpare visas med anonym etikett.",
+      "locale": "sv-SE"
+    },
+    "help-search": {
+      "title": "Hitta din löpare",
+      "body": "**Vad visas?** Officiella resultat som matchar sökord för namn, startnummer och publicerad klubb. **Källa/urval:** vald upplaga, alternativt alla publicerade år om `Alla år` har valts. **Metod:** textmatchning söker resultatposter; samma namn över år är inte bevis för samma person. **Tolkning:** klicka på `Öppna analys` för att se resultatet i detalj. **Begränsning:** vissa personer saknar klubbtillhörighet eller visas anonymt, och det finns ingen garanterad personmatchning över upplagor.",
+      "locale": "sv-SE"
+    },
+    "help-comparison-selection": {
+      "title": "Lägg till jämförelse",
+      "body": "**Vad visas?** Dina valda publicerade resultat för Direktjämförelse och Kartduell. **Källa/urval:** unika result-ID:n och deras år/upplagor. **Metod:** knappen `Lägg till jämförelse` väljer resultatet; samma knapp blir `Ta bort från jämförelse`. Direktjämförelse kräver exakt två; Kartduell två till fem. **Tolkning:** chipen visar endast namn och år så att du kan kontrollera vilka resultat som valts. **Begränsning:** saknade mellanpassager eller bana kan begränsa kart-/segmentanalys trots att resultatet har valts; valet får ändå kunna behållas där det är meningsfullt.",
+      "locale": "sv-SE"
+    },
+    "help-favorites": {
+      "title": "Sparade löpare",
+      "body": "**Vad visas?** Resultat du valt att spara på denna enhet. **Källa/urval:** enbart publicerade result-ID:n, lagrade lokalt i webbläsaren för det aktuella loppet. **Metod:** `Spara` lägger till referensen och `Ta bort favorit` tar bort den. **Tolkning:** detta är ett bokmärke till ett specifikt resultat, inte en permanent konto- eller personkoppling. **Begränsning:** listan kan försvinna om webbläsarens lagring rensas och synkroniseras inte mellan enheter.",
+      "locale": "sv-SE"
+    },
+    "help-runner-summary": {
+      "title": "Loppet i korthet",
+      "body": "**Vad visas?** Sluttid/status, officiell placering, klass, täckning och källdokumenterade prestationsmått för exakt ett publicerat resultat. **Källa/urval:** valt resultat och, för relativa mått, uttryckligen definierat referensfält inom samma upplaga. **Metod:** officiella siffror hämtas direkt; segment/relativa mått beräknas enbart ur verkliga passager. **Tolkning:** värden märkta `Beräknat` är inte originalfält från arrangören. **Begränsning:** DNF/DNS och resultat med saknade mellantider får en begränsad profil utan uppfunna tidsdata.",
+      "locale": "sv-SE"
+    },
+    "help-runner-relative": {
+      "title": "Fart per delsträcka i förhållande till hela loppet",
+      "body": "**Vad visas?** Hur snabb varje delsträcka var relativt individens egen verifierade genomsnittshastighet över hela loppet. **Källa/urval:** individens officiella segmenttider och tillförlitliga ban-/segmentdistanser. **Metod:** relativ fart = `100 × (segmenthastighet / hel-loppshastighet)`; streckad **100 %-linje** = individens eget snitt. **Tolkning:** över 100 % betyder snabbare än eget helsnitt, under 100 % långsammare. `Start` är en första referenspunkt, inte ett påhittat segment. **Begränsning:** saknade eller osäkra distanser spärrar fysikaliskt pace; tempo kan påverkas av terräng och höjd.",
+      "locale": "sv-SE"
+    },
+    "help-runner-segment-time": {
+      "title": "Tidsåtgång per delsträcka",
+      "body": "**Vad visas?** Verklig tidsåtgång mellan två efterföljande analyserbara kontroller. **Källa/urval:** individens positiva ackumulerade tid vid båda verkliga ändpunkter. **Metod:** segmenttid = `slutpassagens tid − startpassagens tid`; `Start` visas med tid noll som referens. **Tolkning:** staplarna visar var tiden användes, men längre segment ger ofta högre värden även vid jämn fart. **Begränsning:** saknas en av gränspassagerna kan tidsåtgången inte beräknas; tiden fylls inte i.",
+      "locale": "sv-SE"
+    },
+    "help-runner-placement": {
+      "title": "Officiell placeringsresa",
+      "body": "**Vad visas?** Hur den officiella placeringen förändrades vid kontroller där placering publicerats. **Källa/urval:** resultatets officiella total- eller klassplacering, tydligt vald och namngiven i grafen. **Metod:** punkterna visas i banordning och Y-axeln vänds så plats 1 är högst. **Tolkning:** en rörelse från plats 80 till 50 visar bättre registrerad position vid nästa kontroll. **Begränsning:** linjen mellan punkter beskriver inte exakt omkörningsplats eller tid; saknade placeringar interpoleras inte.",
+      "locale": "sv-SE"
+    },
+    "help-runner-gap": {
+      "title": "Tidslucka mot fältet",
+      "body": "**Vad visas?** Hur valt resultat förhåller sig tidsmässigt till ett angivet stabilt referensfält eller en källstödd klass. **Källa/urval:** samma kompletta FINISHED-kohort över samtliga visade checkpoints i den aktuella jämförbara upplagan. **Metod:** skillnad mellan löparens verkliga passage och referensens medianpassage vid varje kontroll; tecknets betydelse skrivs ut. **Tolkning:** negativ egen tidsavvikelse betyder att löparen var snabbare än medianens ackumulerade tid. **Begränsning:** referensfält och jämförelsebara checkpoints måste vara samma genom serien; felande passager ger inga punkter.",
+      "locale": "sv-SE"
+    },
+    "help-runner-pacing": {
+      "title": "Pacingprofil och styrkor",
+      "body": "**Vad visas?** Relative segmentprestationer mot samma definierade referensfält, uppdelat efter banans verkliga kontrollsegment. **Källa/urval:** verkliga tider samt tillåtna segmentdistanser. **Metod:** beräkna segmenthastighet eller segmenttidsandel och jämför med referensmedianen; håll kohorten stabil. **Tolkning:** en positiv relativ fart anger en snabbare prestation på den delsträckan än referensen. **Begränsning:** analysen visar mönster, inte varför de uppstått, och kräver säkra segmentmått.",
+      "locale": "sv-SE"
+    },
+    "help-runner-splits": {
+      "title": "Mellantider och analysgränser",
+      "body": "**Vad visas?** Publicerade tidtagningar och härledda intervaller i rätt banordning. **Källa/urval:** officiella passageposter knutna till exakt detta resultat och denna RaceEdition. **Metod:** ackumulerad tid publiceras som källa, segmenttid beräknas som skillnad mellan två verkliga observationer. Starttid 0 anges uttryckligen som modellstart. **Tolkning:** tabellen visar vad som faktiskt är känt. **Begränsning:** speaker-/servicepunkter är inte automatiskt officiella analysgränser; ingen saknad passage gissas.",
+      "locale": "sv-SE"
+    },
+    "help-runner-replay": {
+      "title": "Personlig replay",
+      "body": "**Vad visas?** En illustration av resultatets väg längs den versionerade banan med verkliga passager som ankare. **Källa/urval:** verkliga tidtagningar och en lagligt tillgänglig rutt för vald upplaga. **Metod:** position mellan kontrollerna interpoleras längs banan med segmentets observerade förflutna tid; höjden följer banans referensprofil. **Tolkning:** passagerna är observationer, markörens mellanposition är rekonstruktion. **Begränsning:** detta är inte individens GPS-registrering eller exakt omkörningsdata; DNF stannar vid sista verkliga hållpunkt.",
+      "locale": "sv-SE"
+    },
+    "help-head-to-head": {
+      "title": "Direktjämförelse 2.0",
+      "body": "**Vad visas?** Två officiella resultat jämförs avseende sluttid, gemensamma kontroller, segment och – när möjligt – karta och höjdprofil. **Källa/urval:** två specifika result-ID:n samt deras respektive editioner. **Metod:** varje mått har egen jämförbarhetskontroll; tidslucka = B:s tid minus A:s vid samma verifierbara passage. **Tolkning:** positiv lucka betyder A före, vilket också skrivs ut i klartext. **Begränsning:** resultat från olika år/bangenerationer kan inte jämföras absolut utan dokumenterad jämförbarhet, och saknade tidsankare skapar inga analytiska värden.",
+      "locale": "sv-SE"
+    },
+    "help-head-to-head-segments": {
+      "title": "Segmentduellen",
+      "body": "**Vad visas?** Vilken av två valda personer/lag som var snabbast mellan samma två tillåtna analyspassager. **Källa/urval:** verkliga tidsobservationer för båda vid både segmentets start och slut. **Metod:** `segmenttid = tid_slut − tid_start`; `skillnad = B_segment − A_segment`. **Tolkning:** positiv skillnad innebär att A vann tid, negativ att B vann tid. **Begränsning:** över olika upplagor krävs explicit segmentekvivalens; saknas en ändpunkt lämnas segmentet utan vinnare.",
+      "locale": "sv-SE"
+    },
+    "help-head-to-head-field": {
+      "title": "Segmentfart mot respektive års fält",
+      "body": "**Vad visas?** Varje jämförd deltagare ställs mot fältmedianen för **sin egen** upplaga på varje verkligt jämförbart segment. **Källa/urval:** komplett FINISHED-kohort med `n>=5` giltiga segmentobservationer i respektive RaceEdition. **Metod:** `100 × (fältmedianpace / deltagarpace − 1)`. **Tolkning:** 0 % = editionsfältets median, positiva värden = snabbare. **Begränsning:** en positiv siffra mellan olika år säger inte att banor, väder eller motstånd var identiska; absolut sluttidsjämförelse är en separat regel.",
+      "locale": "sv-SE"
+    },
+    "help-map-duel": {
+      "title": "Kartduell",
+      "body": "**Vad visas?** Två till fem valda resultat med gemensam uppspelningsklocka på en eller flera verifierade banlinjer. **Källa/urval:** valda källresultat och upplagornas tillåtna rutter. **Metod:** markörposition beräknas för samma tid sedan respektive start utifrån verkliga tidankare. **Tolkning:** uppspelningen visar ett begripligt möjligt loppförlopp, inte en film av uppmätt GPS-data. **Begränsning:** mellan passager är positionerna uppskattningar. Olika års banor ska visas separat och kan sakna grund för direkt tidsjämförelse.",
+      "locale": "sv-SE"
+    },
+    "help-map-geometry": {
+      "title": "Banversioner och kartjämförelse",
+      "body": "**Vad visas?** Den kartreferens som är verifierad för varje vald upplaga. **Källa/urval:** officiell GPX, godkänd deltagargeometri eller rekonstruerad och tydligt märkt referensrutt. **Metod:** varje linje är knuten till ett versions-ID med proveniens och jämförbarhetsregler. **Tolkning:** när olika års banor har olika färger visar det geografiska skillnader i rutt. **Begränsning:** en snyggt överlappande linje är inte bevis för samma exakta tävlingsbana eller automatiskt rätt att publicera privata spår.",
+      "locale": "sv-SE"
+    },
+    "help-replay-controls": {
+      "title": "Klocka, kamera och musik",
+      "body": "**Vad visas?** Reglage för rekonstruktionens hastighet, visning och eventuellt ljud. **Källa/urval:** klockan följer vald rekonstruktion; kameran påverkar bara kartvyn. **Metod:** hel uppspelning standard 120 sekunder, val 30/60/120/180; default kamera `Följ båda`; ljud aktiveras av besökaren, standardvolym 30 %. **Tolkning:** kortare uppspelningstid är snabbare animation, inte högre löpfart i officiella data. **Begränsning:** reducerad rörelse eller blockerad uppspelning kan begränsa animation/ljud utan att påverka analysen.",
+      "locale": "sv-SE"
+    },
+    "help-race-plan": {
+      "title": "Personlig loppplan",
+      "body": "**Vad visas?** Ett scenario för hur en vald måltid kan fördelas mellan officiella analyspassager. **Källa/urval:** verkliga kompletta FINISHED-resultat från rätt banversion, alternativt tydligt märkt distansbaserat exempel. **Metod:** varje komplett resultats segmenttid delas med sin sluttid, medianandel beräknas per segment och normaliseras till 100 %; måltiden multipliceras med andelarna och passagetiderna summeras. **Tolkning:** detta ger en historiskt grundad disponering av loppet, inte ett löfte att hålla tiden. **Begränsning:** saknade verkliga splits, annan bana, individuella stopp och väder kan göra planen mindre tillämplig. Default måltid är loppets mediansluttid, aldrig en fast godtycklig tid.",
+      "locale": "sv-SE"
+    },
+    "help-race-plan-pace": {
+      "title": "Beräknat tempo och kontrollpassager",
+      "body": "**Vad visas?** Planerad segmenttid, beräknad medelfart och ackumulerad tid till varje kontroll. **Källa/urval:** personlig loppplan och verifierad segmentdistans, om den finns. **Metod:** `pace = planerade sekunder / verifierad segmentdistans`; kontrolltid är summan av segmenttider till kontrollen. **Tolkning:** värden är beräknade måltider, inte faktiska eller officiellt uppmätta passager. **Begränsning:** där tillförlitlig distans saknas visar vi bara tidsplanen; ett rått timing-kilometervärde ersätter inte fysisk distans.",
+      "locale": "sv-SE"
+    },
+    "help-finish-distribution": {
+      "title": "När gick fältet i mål?",
+      "body": "**Vad visas?** Hur många deltagare/lag som fullföljde inom olika sluttidsintervall. **Källa/urval:** publicerade giltiga FINISHED-tider i valt filtrerat analysurval. **Metod:** tider grupperas i jämnbreda intervall (normalt 15 min) och räknas; median/P10/P90 kan markeras. **Tolkning:** högre stapel betyder fler i det intervallet, inte fler vid en exakt sekund. **Begränsning:** intervallstorleken påverkar histogrammets form; DNS och DNF har ingen målgångstid och inkluderas inte.",
+      "locale": "sv-SE"
+    },
+    "help-percentiles": {
+      "title": "Fältets trösklar och percentiler",
+      "body": "**Vad visas?** Sluttider vid percentiler P10, P25, P50, P75 och P90. **Källa/urval:** giltiga officiella måltider för FINISHED i aktuellt urval. **Metod:** sortera tider stigande, välj percentil via deklarerad linjär interpolation mellan ordnade observationer; P50 är median. **Tolkning:** P10 är en snabb tidsgräns som cirka 10 % klarar eller underskrider, P90 en långsammare som cirka 90 % klarar. **Begränsning:** små fält ger osäkra jämförelser och könsuppdelning kräver publicerade könsdata; måtten är beskrivande, inte en prognos.",
+      "locale": "sv-SE"
+    },
+    "help-time-to-place": {
+      "title": "Vad räcker en sluttid till?",
+      "body": "**Vad visas?** Retrospektivt var en inmatad sluttid hamnar bland tidigare publicerade fullföljare. **Källa/urval:** valt loppår/distanstyp och aktiva filter enligt synlig urvalsetikett. **Metod:** räkna antalet FINISHED med `finish_seconds <= mål`; beräkna andelen och ungefärlig placering genom den sorterade målresultatlistan. **Tolkning:** en vald framtida tid visar var den skulle ha hamnat i det historiska startfältet. **Begränsning:** detta är inte en officiell framtida placering, och banor/fält/väder kan skilja sig.",
+      "locale": "sv-SE"
+    },
+    "help-time-vs-place": {
+      "title": "Tid mot placering",
+      "body": "**Vad visas?** Sambandet mellan offentlig sluttid och totalplacering för fullföljare. **Källa/urval:** FINISHED med både publicerad sluttid och officiell placering i aktuellt urval. **Metod:** varje punkt ligger på X = sluttid och Y = officiell rankning, med plats 1 högst; ingen ny rankning genereras efter filter. **Tolkning:** täta punkter kan betyda att små tidsskillnader gav många placeringssteg. **Begränsning:** detta är slutresultat, inte placering under loppet; vissa lagklasser kan sakna officiell tävlingsrankning.",
+      "locale": "sv-SE"
+    },
+    "help-status-breakdown": {
+      "title": "Status och fullföljande",
+      "body": "**Vad visas?** Fördelning av officiella resultatstatusar i valt urval. **Källa/urval:** arrangörens dokumenterade statusfält, normaliserat till FINISHED/DNF/DNS/DSQ/UNKNOWN. **Metod:** varje resultat räknas en gång i exakt en status; startande räknas separat och exkluderar DNS/UNKNOWN. **Tolkning:** DNS innebär inte start och DNF innebär bruten tävling efter start. **Begränsning:** `UNKNOWN` förblir okänt och får inte uppgraderas för att komplettera statistik.",
+      "locale": "sv-SE"
+    },
+    "help-dnf-flow": {
+      "title": "Avhopp genom loppet",
+      "body": "**Vad visas?** Antal DNF och, om verkliga DNF-passager är tillgängliga, den senaste **observerade** kontrollen för respektive DNF. **Källa/urval:** källstatus DNF samt publicerade passager. **Metod:** grupperas efter sista verifierade analytiska kontroll; okänd passagedata ger en separat okänd-grupp eller endast total DNF. **Tolkning:** sista observation visar var resultatet senast registrerades, inte exakt var löparen bröt. **Begränsning:** ofullständig splitdata kan inte användas för att påstå en avhoppsplats, och en okänd passage får aldrig skapas.",
+      "locale": "sv-SE"
+    },
+    "help-segment-character": {
+      "title": "Delsträckornas karaktär",
+      "body": "**Vad visas?** Typisk tidsåtgång/fart och spridning på verkliga segment. **Källa/urval:** fullföljande med godkända riktiga segmentpassager; visat `n` per segment eller stabilt komplett urval enligt grafens kohortetikett. **Metod:** segmenttid = passage differens; vid verifierad distans pace = segmenttid/delsträckans km; median och kvartilintervall enligt deklarerad kvantilmetod. **Tolkning:** långsammare pace kan sammanfalla med backar eller banans egenskaper, men bevisar inte orsaken. **Begränsning:** saknad fysisk km spärrar pace, få observationer spärrar kvantilband.",
+      "locale": "sv-SE"
+    },
+    "help-segment-lab": {
+      "title": "Delsträckelabbet",
+      "body": "**Vad visas?** Verkliga tider och prestationer mellan två valda analyspassager. **Källa/urval:** resultat som har officiell giltig tid vid båda valda ändpunkterna. **Metod:** räkna tidsdifferens; ranka på tidsåtgång, på verifierad pace eller på officiell placeringsförändring beroende på vald vy. **Tolkning:** `Snabbast` avser vald delsträcka, inte automatiskt loppets slutvinnare. **Begränsning:** delsträckor får inte uppstå genom att saknade mellantider uppskattas och banversionen måste vara tydlig.",
+      "locale": "sv-SE"
+    },
+    "help-placement-gains": {
+      "title": "Största avancemang",
+      "body": "**Vad visas?** Resultat med störst förbättring mellan två officiellt rankade passager. **Källa/urval:** publicerad totalplacering/klassplacering med samma betydelse vid båda valda punkter. **Metod:** `första placering − sista placering` (positivt = förbättrad). **Tolkning:** en förbättring från 80 till 50 är 30 placeringssteg. **Begränsning:** detta är inte antalet fysiska omkörningar och kan inte säga exakt var förändringen skedde.",
+      "locale": "sv-SE"
+    },
+    "help-strongest-finish": {
+      "title": "Spurten mot mål",
+      "body": "**Vad visas?** Snabbaste verkligt uppmätta segmenttid från den sista officiella analytiska kontrollen före mål till den officiella målgången. **Källa/urval:** FINISHED med giltig tid vid båda ändpunkter. **Metod:** `målpassage − sista officiella kontrollpassage`; ranka lägst positiv tid först inom valt kön/klass. **Tolkning:** vinnaren är snabbast just på avslutningssegmentet, inte nödvändigtvis loppvinnaren. **Begränsning:** jämförelse över olika banversioner är spärrad utan segmentjämförbarhet; ett speakerankare blir inte automatiskt analyskontroll.",
+      "locale": "sv-SE"
+    },
+    "help-gender-class": {
+      "title": "Klasser och kön",
+      "body": "**Vad visas?** Publicerat deltagande, fullföljande, medianmål och segmentmönster per kön eller klass. **Källa/urval:** resultatuppgifternas explicita köns- och klassfält. **Metod:** samma start-, finish- och medianregler som i övergripande KPI, men tillämpade på en angiven grupp med n-tröskel. **Tolkning:** jämförelser beskriver gruppernas resultat i denna upplaga. **Begränsning:** okänt kön redovisas som saknat; lagklass får inte härledas från lagmedlemmars kön.",
+      "locale": "sv-SE"
+    },
+    "help-age": {
+      "title": "Ålder och åldersklasser",
+      "body": "**Vad visas?** Deltagarfördelning och prestation per ålder eller källans åldersklass. **Källa/urval:** endast verklig publicerad exakt ålder respektive officiell klassbeteckning. **Metod:** kategorier räknas separat; 5-årsintervall används enbart när exakt ålder finns. **Tolkning:** siffror avser deltagare med känd uppgift och coverage ska anges. **Begränsning:** exakt ålder får inte gissas från `M45–49`, och okänd ålder får inte ersättas av klassens mittpunkt.",
+      "locale": "sv-SE"
+    },
+    "help-clubs": {
+      "title": "Klubbar och orter",
+      "body": "**Vad visas?** Hur publicerade klubbar/orter är representerade samt deras sluttider, fullföljande och eventuellt segmentfart. **Källa/urval:** källans klubb- och ortfält; verifierade alias kan slås ihop enligt dokumenterad mapping. **Metod:** resultat grupperas per canonical klubb/ort; startande, FINISHED, median och andelar räknas enligt samma regler som övriga grupper. **Tolkning:** jämförelsen visar representation och utfall, inte en rangordning av klubbars kvalitet. **Begränsning:** blandade namn, saknad klubb och olika stora grupper kan ge skev bild; redovisa `n` och täckning.",
+      "locale": "sv-SE"
+    },
+    "help-field-spread": {
+      "title": "Fältets spridning genom loppet",
+      "body": "**Vad visas?** Median och fördelningsband för fart eller segmenttider i banordning. **Källa/urval:** samma kompletta FINISHED-kohort över alla segment i serien, enligt vald edition/grupp. **Metod:** median vid `n>=5`, Q25–Q75 vid `n>=10`, Q10–Q90 vid `n>=20`. **Tolkning:** bredare band betyder större skillnad mellan typiska snabbare och långsammare resultat. **Begränsning:** banden är inte statistiska konfidensintervall eller orsaksmått, och endast verkliga segment ingår.",
+      "locale": "sv-SE"
+    },
+    "help-pacing-retention": {
+      "title": "Fart relativt eget snitt",
+      "body": "**Vad visas?** Hur varje grupps verifierade segmenthastighet utvecklas jämfört med dess egen hel-loppshastighet. **Källa/urval:** en komplett, stabil FINISHED-kohort per grupp genom hela banan. **Metod:** `100 × segmenthastighet / hel-loppshastighet`; **100 %** är referenslinje. **Tolkning:** värden över 100 % innebär snabbare segment än gruppens helsnitt. **Begränsning:** olika grupplängder och terräng påverkar tolkningen; inga gruppmedel bygger på uppskattad fysisk fart.",
+      "locale": "sv-SE"
+    },
+    "help-podium": {
+      "title": "Pallplatserna",
+      "body": "**Vad visas?** Publicerade pallresultat och snabbaste officiella sluttider inom tävlingsklass eller hela fältet. **Källa/urval:** verifierad officiell ranking samt FINISHED med giltig sluttid. **Metod:** använd publicerad rang i första hand; sortera inte unrankade klasser till en påhittad tävlingspall. **Tolkning:** pallplatser gäller angiven klass/år/distans. **Begränsning:** samma tid kan delas, separata klasser får egna pallar, och personer med önskad anonymitet exponeras inte.",
+      "locale": "sv-SE"
+    },
+    "help-standouts": {
+      "title": "Prestationer som sticker ut",
+      "body": "**Vad visas?** Dokumenterbara prestationer som flera fullföljda lopp, jämn fart, förbättring, segmentframgång eller slutspurt. **Källa/urval:** officiella resultat, verifierad personidentitet där flera år korsas och uttryckliga jämförbarhetsregler för prestationer. **Metod:** varje tabb anger separat metric, beräkningsregel och kohort; inget blandat ospecificerat \"poängindex\". **Tolkning:** placeringen i en sådan lista är en statistisk särskiljning, inte automatiskt arrangörens tävlingsranking. **Begränsning:** banändringar, saknade splits och osäker identitet kan förhindra ett delmått.",
+      "locale": "sv-SE"
+    },
+    "help-course": {
+      "title": "Bana och höjdprofil",
+      "body": "**Vad visas?** Loppets godkända geografiska rutt med kontroller och referenshöjd. **Källa/urval:** editionens versionerade banunderlag, med tydlig märkning om GPX kommer från arrangör, deltagare eller rekonstruktion. **Metod:** GPS-geometri ger distans och kontrollpositioner; höjddata normaliseras från angiven källa enligt samma metod inom jämförbara versioner. **Tolkning:** en markerad uppförsbacke kommer från den kartbaserade höjdprofilen, inte en deltagares barometriska mätning. **Begränsning:** höjd kan variera mellan datakällor; teknisk stigsvårighet får inte påstås från lutning ensam.",
+      "locale": "sv-SE"
+    },
+    "help-course-versions": {
+      "title": "Banversioner mellan år",
+      "body": "**Vad visas?** Kända och jämförbara banor för olika upplagor. **Källa/urval:** verifierat `CourseVersion`-register med proveniens och immutable fingerprint. **Metod:** separata årskartor visas där de skiljer sig; route/elevation/display kan ha olika konfidensnivå. **Tolkning:** år med delad verifierad bana kan kopplas när evidens finns. **Begränsning:** liknande karta eller marknadsförd distans bevisar inte absolut prestationsjämförbarhet och ett referensspår är inte officiell årsbana.",
+      "locale": "sv-SE"
+    },
+    "help-edition-history": {
+      "title": "Loppets utveckling genom åren",
+      "body": "**Vad visas?** Historiskt antal startande/fullföljande/DNF, gruppernas storlek och där tillåtet jämförbar sluttidsutveckling. **Källa/urval:** separat verifierade RaceEditions från genomförda år. **Metod:** volymer kan följas över banförändringar; fart- och sluttidsserier kräver uttryckligt jämförbara banversioner. **Tolkning:** ett år utan import är `saknar data`, inte noll; inställt år är `inställt`. **Begränsning:** ändrad sträckning, klassregler och statusdefinition påverkar historiska prestationsserier.",
+      "locale": "sv-SE"
+    },
+    "help-person-history": {
+      "title": "En löpare genom åren",
+      "body": "**Vad visas?** Flera officiella resultat som genom verifierad personkoppling tillhör samma person. **Källa/urval:** godkänd canonical personnyckel och resultatrader från olika editions. **Metod:** identity mapping separat från resultatkällan; prestationsförändring visas bara på jämförbara banor. **Tolkning:** fler starter och bästa prestationer kan visas även när sluttidstrender är spärrade. **Begränsning:** samma namn eller födelseår ensamt räcker inte för att slå samman olika personer och lagidentiteter.",
+      "locale": "sv-SE"
+    },
+    "help-results": {
+      "title": "Resultatdatabas",
+      "body": "**Vad visas?** Resultatrader som får publiceras för vald distans/år, med filter, sortering och möjlighet att öppna analys. **Källa/urval:** sanerad officiell export, inte rå dump. **Metod:** sortering använder källvärden och stabil result-ID, och tabellen kan filtreras utan att källans officiella placering räknas om. **Tolkning:** en rad avser ett deltagande i en viss upplaga. **Begränsning:** saknad klass/kön/klubb visas som saknad, och anonymiserade personer förblir anonymiserade i vy, dataattribut och delningslänkar.",
+      "locale": "sv-SE"
+    },
+    "help-method": {
+      "title": "Metod och datakällor",
+      "body": "**Vad visas?** Vilka officiella resultat, importer och banfiler som analysen bygger på samt hur värden beräknas. **Källa/urval:** editionens source binding, routeversion och data coverage. **Metod:** originaldata lagras separat från en normaliserad analysmodell och publicerad sanerad export; härledda mått görs reproducerbart. **Tolkning:** en tydlig källkedja gör siffrorna granskbara. **Begränsning:** källsajter kan förändras och oklara publicerade uppgifter lämnas okända snarare än gissas.",
+      "locale": "sv-SE"
+    },
+    "help-coverage": {
+      "title": "Datatäckning och osäkerhet",
+      "body": "**Vad visas?** Hur många resultat som har giltiga sluttider, kön, ålder, klubb, officiella kontroller, tillåten rutt och replaystöd. **Källa/urval:** validerad kuraterad databas och course readiness för aktuell edition. **Metod:** `täckning = tillgängliga godkända värden / relevanta publicerade resultat`, med deklarerad nämnare för varje fält. **Tolkning:** en analys med 60 % könstäckning beskriver inte nödvändigtvis hela startfältets könsfördelning. **Begränsning:** godkänd GPS-geometri innebär inte automatiskt att allas passagetider eller banans höjder är kända.",
+      "locale": "sv-SE"
+    },
+    "help-privacy": {
+      "title": "Integritet och anonymisering",
+      "body": "**Vad visas?** Hur publicerad personinformation används och hur den kan rättas eller skyddas. **Källa/urval:** officiella resultat i en offentligt sanerad version; personkoppling och anonymisering hanteras i separat administrativt register. **Metod:** en beslutad anonymisering tillämpas före varje webbexport, sökindex, delning och flerårsvisning; CI ska stoppa läckande ursprungsnamn i publicerade data. **Tolkning:** analysvärden kan finnas kvar när en persons visningsnamn ersätts av anonym beteckning. **Begränsning:** offentlig originalkälla kan fortfarande redovisa uppgiften utanför Loppanalys; webbplatsens integritetstext och juridiska rutiner måste vara korrekta.",
+      "locale": "sv-SE"
+    }
+  }
+}
