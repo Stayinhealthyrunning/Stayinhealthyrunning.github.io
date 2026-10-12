@@ -20,7 +20,7 @@
 ## 3. Verkställ i samtliga lopp
 
 1. Sök efter relevanta resultat i Ultravasan, Gotaleden, ÖST, Sätila och GAX100 samt framtida importer, utan att anta att alla personer med samma namn är samma individ.
-2. För ett beviljat **publikt identitetsskydd**, tillämpa den gemensamma spärren före export och rensa direkta identifierare, klubb/startnummer och identifierande URL-parametrar eller metadata.
+2. För ett beviljat **publikt identitetsskydd**, registrera endast ett normaliserat envägsfingeravtryck och de manuellt godkända lopp-/resultat-ID:na i det åtkomstskyddade registret. Lägg aldrig namn, kontaktuppgifter eller spärrfingeravtryck i ett publikt repo.
 3. För **full radering**, ta bort den berörda personens identifierbara resultat från den publika exporten i den utsträckning beslutet kräver; bevara inte automatiskt detaljerad loppstatistik som kan länkas tillbaka till personen.
 4. Titta även på startsidans kort, sökförslag, publika JSON, jämförelseval, diagram, kartpopup, delningslänkar, arkiverade byggen och cache. Kontrollera att offentliga datakopior där du råder över dem rättas eller tas bort.
 5. Bygg om berörda publika exportfiler och låt CI/QA blockera distribution om skyddad identitet hittas. Kontrollera aktuell publicerad version manuellt.
@@ -36,8 +36,8 @@
 ## 5. Teknikstatus vid upprättandet
 
 - De fristående analysverktygens HTML-sidor har fått `noindex, nofollow`; detta blockerar inte direkt åtkomst eller öppet JSON.
-- De fyra tidigare loppsystemen har en gemensam grund för publiceringsspärrar.
-- GAX100:s Draft-branch har fått samma fingerprint-spärr och ett test av publik export; full täckning och global administration återstår att verifiera.
-- En gemensam, säker operatörsfunktion för alla framtida lopp återstår. Tills dess behövs explicit kontroll per repo och publicerad artefakt.
+- Ett gemensamt privat registerformat och ett lokalt administrationsverktyg finns. Verktyget vägrar lagra ärende eller register i ett publikt repo och skriver aldrig hemligheten till standardutmatningen.
+- De fyra publicerade loppsystemen och GAX100:s befintliga Draft-branch har fail-closed-adaptrar. En namnträff som saknar ett manuellt godkänt lopp-/resultat-ID stoppar publicering.
+- Produktionsflöden får aktiveras först när GitHub Actions-hemligheten `LOPPANALYS_PRIVACY_REGISTRY_B64` har verifierats av den separata sekretesskontrollen. Ett saknat secret är ett avsiktligt hårt fel.
 
 Referenser: [GDPR](https://eur-lex.europa.eu/legal-content/SV/TXT/?uri=CELEX%3A32016R0679) artiklarna 12, 14, 16–18, 19 och 21 samt [IMY:s översikt av den registrerades rättigheter](https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/de-registrerades-rattigheter/).
