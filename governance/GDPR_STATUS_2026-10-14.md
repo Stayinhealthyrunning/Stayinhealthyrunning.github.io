@@ -4,6 +4,21 @@
 
 Detta dokument är en levande lägesuppdatering och ersätter **inte** historiska revisionsprotokoll från 2026-10-12. Dokumentet innehåller inga registrerade personers identiteter eller privata registeruppgifter.
 
+## Överenskommen teknisk målsättning
+
+Utvecklingsarbetet fortsätter med utgångspunkt att Loppanalys behandlar **officiella, redan offentliga idrottsresultat för statistik och analys**, med ett dokumenterat berättigat intresse som avsedd rättslig grund. Den bedömningen är en arbetsinriktning och inte ett generellt påstående att all personuppgiftsbehandling automatiskt är laglig.
+
+Den prioriterade tekniska acceptansen är: (1) verifierat minderåriga ska vara borttagna ur individexporten, (2) godkända vuxna opt-out-begäranden ska gälla i alla berörda lopp och vid återimport, (3) inga känsliga identiteter eller originalkällor återpubliceras av rutinjobb, och (4) nya lopp ärver samma exportgrindar. Separat incidentrapport har inte beställts inom utvecklingsarbetet; eventuella självständiga rättsliga skyldigheter avgörs inte av denna projektavgränsning.
+
+## Utfört i denna arbetsomgång
+
+- Ny `.github/workflows/guard-public-raw-sources.yml` finns på `main` i **samtliga fem** analysrepon och dess första körning är PASS. Den stoppar ändrade skyddade rådatavägar, inklusive offentliga deletion-diffar, utan att skriva deltagarrader i loggar. Spärren raderar inte historik och omfattar utpekade källvägar, inte samtliga tänkbara filer.
+- Sätilas äldre `import-eqtiming.yml` är stoppad; GitHub Actions verifierade att importjobbet hoppades över.
+- Gotaledens och Österlens privata source-restore använder nu `if: always()` för att städa den privata checkouten också efter misslyckande; Ultravasan och GAX100 hade redan detta.
+- Normen `standards/LOPPANALYS_STANDARD_V1_0.md` kräver nu borttagning av spärrad individs offentliga resultatrader/länkade detaljer som förstahandslösning, minderårighetsskydd, fail-closed-register och CI-spärr mot offentliga råkälländringar.
+- Ultravasan fick [PR #84](https://github.com/Stayinhealthyrunning/ultravasan-analys/pull/84) för att granska och samordna den oförändrade U2-semantikens referenshashar efter automatiskt skyddad webbutmatning. Denna PR får bara mergas efter full grönt CI.
+- Österlens ena Pages-deploy kolliderade med en samtidig föregående deployment; samma jobbs omkörning har begärts. Funktionstesterna passerade.
+
 ## Verifierad GitHub-status
 
 | Projekt | Publiceringsskydd / källa | Kvar |
