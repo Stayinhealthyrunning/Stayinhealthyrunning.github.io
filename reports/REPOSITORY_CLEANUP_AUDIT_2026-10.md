@@ -72,3 +72,24 @@ destructive action in this assignment.
 
 At this stage the only code change is this audit report; no visual, runtime,
 data, GDPR, or navigation behavior was changed.
+
+## Phase 2 follow-up (2026-10-14)
+
+The review of PR #13 required concrete A–E classifications before any removal.
+Those classifications are now recorded in separate Draft PRs:
+
+- Gotaleden: [PR #58](https://github.com/Stayinhealthyrunning/gotaleden-splits/pull/58), commit `f53b3bee44994d043f8ac417b6f31b2c14c14617`.
+- Sätila: [PR #61](https://github.com/Stayinhealthyrunning/satila-splits/pull/61), commit `17829cba619d7c14388e93cd2c537df824821954`.
+- GAX100 active integration branch: [PR #7](https://github.com/Stayinhealthyrunning/gax100-analys/pull/7), commit `4da1f990cfcc7f904af9c552da9ddb0652004b89`.
+
+The evidence review found no proven class-A file and no safe class-C code or
+workflow consolidation in these first repositories. Identical Gotaleden
+outputs are generator- and test-backed compatibility aliases; private-source,
+GDPR and history workflows are B-class security controls. Consequently no
+tracked file was deleted and no duplicated runtime code was rewritten. This is
+an explicit negative finding, not an age/size-based cleanup shortcut.
+
+Phase 3 is gated on the existing Actions with writable temporary storage and
+the documented private read-only restore. Secrets, permissions, old rewritten
+refs, hidden PR caches and private originals remain untouched. PR #13 stays
+Draft until the Actions evidence and any owner decisions are available.
