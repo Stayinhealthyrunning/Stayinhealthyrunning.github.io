@@ -16,8 +16,8 @@ Den prioriterade tekniska acceptansen är: (1) verifierat minderåriga ska vara 
 - Sätilas äldre `import-eqtiming.yml` är stoppad; GitHub Actions verifierade att importjobbet hoppades över.
 - Gotaledens och Österlens privata source-restore använder nu `if: always()` för att städa den privata checkouten också efter misslyckande; Ultravasan och GAX100 hade redan detta.
 - Normen `standards/LOPPANALYS_STANDARD_V1_0.md` kräver nu borttagning av spärrad individs offentliga resultatrader/länkade detaljer som förstahandslösning, minderårighetsskydd, fail-closed-register och CI-spärr mot offentliga råkälländringar.
-- Ultravasan fick [PR #84](https://github.com/Stayinhealthyrunning/ultravasan-analys/pull/84) för att granska och samordna den oförändrade U2-semantikens referenshashar efter automatiskt skyddad webbutmatning. Denna PR får bara mergas efter full grönt CI.
-- Österlens ena Pages-deploy kolliderade med en samtidig föregående deployment; samma jobbs omkörning har begärts. Funktionstesterna passerade.
+- Ultravasans [PR #84](https://github.com/Stayinhealthyrunning/ultravasan-analys/pull/84) **mergades efter grön full Tests, GDPR-grind, källkontroll och raw-source-guard** till `84555dc3f20107fdc381aa98983230818e6cc4a3`. PR:n ändrade endast tre filhashar i U2-referensen efter skyddad webbutmatning; inga deltagarposter eller analysregler.
+- Österlens ena Pages-deploy kolliderade med en samtidig föregående deployment; **omkörningen PASS** för senaste huvudbranchens commit `a54207726524a70d68102d79e8a0cb62d64438ed`. Funktionstesterna passerade.
 
 ## Verifierad GitHub-status
 
