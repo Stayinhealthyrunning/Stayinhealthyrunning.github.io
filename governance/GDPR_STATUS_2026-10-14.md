@@ -21,7 +21,7 @@ Den prioriterade tekniska acceptansen är: (1) verifierat minderåriga ska vara 
 
 ## Säkrare avslut och beroenden
 
-- **Gotaleden:** senaste CI, Pages och råkällsgrind är PASS efter ändringarna på `5c4af4ad7460e0ae4d2e1b04b42f59432dc78ab7`. Inga 16 publikt spårade original avlägsnas genom denna kodfix; separat säker ref-/historikrutin kvarstår.
+- **Gotaleden:** senaste CI, Pages och råkällsgrind är PASS efter ändringarna på `5c4af4ad7460e0ae4d2e1b04b42f59432dc78ab7`. Inga 16 publikt spårade original avlägsnas genom denna kodfix; separat säker ref-/historikrutin kvarstår. **Full branch-head-granskning:** 57 av 58 listade Git-grenar innehåller minst en av de ursprungliga källvägarna. Endast den särskilda migrationsarbetsgrenen saknar dem i sitt aktuella träd; även den har historiska objekt. Alla 58 branch-heads, historik och dolda PR-referenser måste hanteras i en godkänd sanering. Se [privat beslutsärende #6](https://github.com/Stayinhealthyrunning/loppanalys-private-data/issues/6).
 - **Ultravasan:** PR #84 mergad till `84555dc3f20107fdc381aa98983230818e6cc4a3`; även **postmerge** Tests, Pages och råkällsgrind PASS.
 - **Österlen:** frontend/QA och omkörd Pages-deployment PASS efter källstädningen, på `a54207726524a70d68102d79e8a0cb62d64438ed`.
 - **Sätila:** public raw-source guard PASS och rå EQ Timing-workflow avsiktligt SKIPPED. Befintliga offentliga deltagar-GPX och 43-km-ZIP kvarstår som granskningsobjekt.
