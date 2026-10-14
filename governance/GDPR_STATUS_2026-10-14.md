@@ -16,6 +16,8 @@ Detta dokument är en levande lägesuppdatering och ersätter **inte** historisk
 
 För samtliga fyra aktiva analyser har HTML `noindex, nofollow` verifierats i aktuell `docs/index.html`. Detta är **inte** åtkomstkontroll för Git, PDF, JSON eller GPX. Privat `LOPPANALYS_PRIVACY_REGISTRY_B64` används som fail-closed-gate; hemlighetsvärdet får aldrig skrivas i repository, issue eller loggar. För GAX100 är motsvarande skydd ännu endast i granskningsgrenarna.
 
+**Ny skyddsåtgärd 2026-10-14:** Sätilas äldre importjobb som laddade upp ofiltrerade EQ Timing-källor som Actions-artefakter har spärrats på `main` (`c90bc04f62e62b1f5d0ac01ace5ed62207606222`). GitHub Actions bekräftar att efterföljande körning **skipped**. Tidigare artefakter försvinner inte av denna spärr.
+
 ## Blockeringsordning – avsluta innan ny funktionsutveckling
 
 1. **Omedelbar riskhantering – Gotaleden:** Bevara privat verifierat original (gjort); gör separat krypterad och återläst backup på annat konto/medium (ej verifierat); inventera samtliga branches/tags/PR-referenser, Actions, Pages, forks, kloner och exponering; besluta om incident och riskbegränsande åtgärder. Detta kräver inte att personnamn publiceras.
