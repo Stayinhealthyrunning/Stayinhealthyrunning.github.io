@@ -1,5 +1,7 @@
 # GDPR – åtgärdsplan och beslutsunderlag för Loppanalys.se
 
+**Senaste kontrollerade status (2026-10-14):** Se [GDPR_STATUS_2026-10-14.md](GDPR_STATUS_2026-10-14.md). Nedanstående tabell är en historisk bedömning från 12 oktober och ska inte tolkas som aktuell driftstatus. De fyra publicerade verktygens privata registerskydd är nu integrerade, men Gotaledens offentliga originalkällor och kvarvarande historik/cache samt organisatoriska beslut blockerar GDPR-slutgodkännande. GAX100 förblir Draft.
+
 **Senast reviderad:** 2026-10-12  
 **Ägare / ansvarig för beslut:** personuppgiftsansvarig för Loppanalys.se  
 **Utgångspunkt:** [GDPR-intresseavvägningen](GDPR_INTRESSEAVVAGNING_2026-10-12.md).  
