@@ -81,6 +81,8 @@ Those classifications are now recorded in separate Draft PRs:
 - Gotaleden: [PR #58](https://github.com/Stayinhealthyrunning/gotaleden-splits/pull/58), commit `f53b3bee44994d043f8ac417b6f31b2c14c14617`.
 - Sätila: [PR #61](https://github.com/Stayinhealthyrunning/satila-splits/pull/61), commit `17829cba619d7c14388e93cd2c537df824821954`.
 - GAX100 active integration branch: [PR #7](https://github.com/Stayinhealthyrunning/gax100-analys/pull/7), commit `4da1f990cfcc7f904af9c552da9ddb0652004b89`.
+- Ultravasan: [PR #85](https://github.com/Stayinhealthyrunning/ultravasan-analys/pull/85), commit `489af0944b9b858f66648fb5dcf2367d6dc3b574`.
+- Österlen: [PR #76](https://github.com/Stayinhealthyrunning/osterlen-spring-trail-analys/pull/76), commit `eecf6770720708ae3b7d178787ea1e9d2f8a1c37`.
 
 The evidence review found no proven class-A file and no safe class-C code or
 workflow consolidation in these first repositories. Identical Gotaleden
