@@ -19,6 +19,15 @@ Den prioriterade tekniska acceptansen är: (1) verifierat minderåriga ska vara 
 - Ultravasans [PR #84](https://github.com/Stayinhealthyrunning/ultravasan-analys/pull/84) **mergades efter grön full Tests, GDPR-grind, källkontroll och raw-source-guard** till `84555dc3f20107fdc381aa98983230818e6cc4a3`. PR:n ändrade endast tre filhashar i U2-referensen efter skyddad webbutmatning; inga deltagarposter eller analysregler.
 - Österlens ena Pages-deploy kolliderade med en samtidig föregående deployment; **omkörningen PASS** för senaste huvudbranchens commit `a54207726524a70d68102d79e8a0cb62d64438ed`. Funktionstesterna passerade.
 
+## Säkrare avslut och beroenden
+
+- **Gotaleden:** senaste CI, Pages och råkällsgrind är PASS efter ändringarna på `5c4af4ad7460e0ae4d2e1b04b42f59432dc78ab7`. Inga 16 publikt spårade original avlägsnas genom denna kodfix; separat säker ref-/historikrutin kvarstår.
+- **Ultravasan:** PR #84 mergad till `84555dc3f20107fdc381aa98983230818e6cc4a3`; även **postmerge** Tests, Pages och råkällsgrind PASS.
+- **Österlen:** frontend/QA och omkörd Pages-deployment PASS efter källstädningen, på `a54207726524a70d68102d79e8a0cb62d64438ed`.
+- **Sätila:** public raw-source guard PASS och rå EQ Timing-workflow avsiktligt SKIPPED. Befintliga offentliga deltagar-GPX och 43-km-ZIP kvarstår som granskningsobjekt.
+- **GAX100:** public raw-source guard PASS i `main`, senaste käll- och GDPR-integration QA PASS men PR #6 fortsätter vara Draft och ej publicerad.
+- **Oberoende backup:** det privata arkivet innehåller nu [Windows-guiden utan GitHub CLI](https://github.com/Stayinhealthyrunning/loppanalys-private-data/blob/main/docs/BACKUP_WINDOWS_NO_GH_CLI.md), kontrollskript och en föreslagen Windows Actions-testkörning. Ingen fristående krypterad kopia eller lyckad provåterläsning är ännu dokumenterad. Verktyget måste köras/verifieras innan vi godkänner historiesanering.
+
 ## Verifierad GitHub-status
 
 | Projekt | Publiceringsskydd / källa | Kvar |
