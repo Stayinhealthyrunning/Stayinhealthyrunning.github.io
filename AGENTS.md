@@ -13,6 +13,7 @@ Läs dessutom `standards/STANDARD_DEFAULTS_V1_0.json`, `standards/HELP_CONTENT_S
 - Därefter generella analyser, fältstatistik och längre ned resultatdatabas samt metodik.
 - Interaktionerna, inklusive **Lägg till jämförelse**, ta bort, dela, favoriter, replay/musik, segment-/kart-/höjdprofilkoppling och (i)-hjälp, ska fungera.
 - Saknade mellantider, identiteter, banor eller annan källdata får inte fabriceras; tillgänglighet ska vara källstyrd.
+- **GDPR är en blockerande releasegrind:** använd endast sanerad publik export med privat schema-2-spärrregister och fail-closed-kontroller. Publicera inte verifierat minderåriga eller spärrade individer och deras länkade detaljer. Godkänn varje ny namnlika träff manuellt. Källoriginal lagras privat, och nya repon måste ha CI-spärr mot ändringar av publik rådata. Se standardens avsnitt 14.5–14.6.
 - De fyra befintliga publicerade systemen får **inte byggas om** enbart för att passa den nya mallen.
 
 Om du skapar ett separat repo för ett nytt lopp: ange länken till denna standard i dess README och AGENTS.md. Aktuell standard i huvudrepot gäller. Vid vanlig utveckling av portalens startsida och katalog gäller respektive uppdrag.
