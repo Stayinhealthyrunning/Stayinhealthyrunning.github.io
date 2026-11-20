@@ -56,6 +56,20 @@ export const races = [
     years: []
   },
   {
+    key: 'gax100',
+    name: 'GAX100 Splits',
+    description: 'Utforska The GAX 100 miles med resultat från 14 upplagor, mellantider, löparjämförelser, kartor och personlig loppplan.',
+    url: 'https://stayinhealthyrunning.github.io/TheGAX100-splits/',
+    image: 'https://stayinhealthyrunning.github.io/TheGAX100-splits/assets/hero-ales-stenar-trail-runners.webp',
+    imageAlt: 'Traillöpare längs den skånska kusten vid Ales stenar',
+    imagePosition: 'center center',
+    status: 'Tillgänglig',
+    available: true,
+    terrain: 'trail',
+    distances: ['100 miles'],
+    years: []
+  },
+  {
     key: 'future',
     name: 'Fler lopp på väg',
     description: 'Fler spännande lopp kommer snart till Loppanalys.',
